@@ -3,11 +3,15 @@ import { View, Text, ScrollView, RefreshControl } from "react-native";
 import { useQuery } from "@apollo/client";
 import { GET_FEATURED } from "@/graphql/queries";
 import { TrackRow } from "@/components/TrackRow";
+import { TrackCard } from "@/components/TrackCard";
 import { usePlayer } from "@/context/PlayerContext";
 import { useAuth } from "@/context/AuthContext";
 import { Track } from "@/types";
+import { useWindowDimensions } from "react-native";
 
 export function HomeScreen() {
+  const { width } = useWindowDimensions();
+  const isDesktop = width >= 768;
   const { user } = useAuth();
   const { data, loading, refetch } = useQuery(GET_FEATURED);
   const { playTrack, currentTrack } = usePlayer();
@@ -36,14 +40,27 @@ export function HomeScreen() {
           <Text className="text-white text-xl font-bold mb-2">New Releases</Text>
         </View>
 
-        {tracks.map((t) => (
-          <TrackRow
-            key={t.id}
-            track={t}
-            isActive={currentTrack?.id === t.id}
-            onPress={() => playTrack(t, tracks)}
-          />
-        ))}
+        {isDesktop ? (
+          <View className="flex-row flex-wrap px-4">
+            {tracks.map((t) => (
+              <TrackCard
+                key={t.id}
+                track={t}
+                isActive={currentTrack?.id === t.id}
+                onPress={() => playTrack(t, tracks)}
+              />
+            ))}
+          </View>
+        ) : (
+          tracks.map((t) => (
+            <TrackRow
+              key={t.id}
+              track={t}
+              isActive={currentTrack?.id === t.id}
+              onPress={() => playTrack(t, tracks)}
+            />
+          ))
+        )}
 
         {!loading && tracks.length === 0 && (
           <Text className="text-spotify-lightgray text-center mt-10">

@@ -8,10 +8,27 @@ import { MiniPlayer } from "@/components/MiniPlayer";
 import { PlaylistDetailScreen } from "@/screens/PlaylistDetailScreen";
 import { LikedSongsScreen } from "@/screens/LikedSongsScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { DesktopSidebar } from "@/components/DesktopSidebar";
+import { useWindowDimensions } from "react-native";
 
 // Custom tab bar: renders the persistent mini-player directly above the
 // standard tab bar, matching Spotify's layout.
 function TabBarWithMiniPlayer(props: any) {
+  const { width } = useWindowDimensions();
+  const isDesktop = width >= 768;
+
+  if (isDesktop) {
+    return (
+      <View style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }} pointerEvents="box-none">
+        <View style={{ position: "absolute", left: 0, top: 0, bottom: 65, width: 256 }}>
+          <DesktopSidebar {...props} />
+        </View>
+        <View style={{ position: "absolute", left: 0, right: 0, bottom: 0 }}>
+          <MiniPlayer />
+        </View>
+      </View>
+    );
+  }
   return (
     <View>
       <MiniPlayer />
@@ -40,8 +57,12 @@ function TabIcon({ symbol, focused }: { symbol: string; focused: boolean }) {
 }
 
 export function BottomTabs() {
+  const { width } = useWindowDimensions();
+  const isDesktop = width >= 768;
+
   return (
     <Tab.Navigator
+      sceneContainerStyle={isDesktop ? { paddingLeft: 256, paddingBottom: 65 } : {}}
       tabBar={(props) => <TabBarWithMiniPlayer {...props} />}
       screenOptions={{
         headerShown: false,

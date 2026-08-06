@@ -24,10 +24,11 @@ export function RegisterScreen({ navigation }: any) {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : undefined}
-      className="flex-1 bg-black justify-center px-6"
-    >
+    <View className="flex-1 bg-black justify-center">
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        className="w-full max-w-sm self-center px-6"
+      >
       <Text className="text-spotify-green text-4xl font-extrabold text-center mb-10">
         spotify.
       </Text>
@@ -77,6 +78,7 @@ export function RegisterScreen({ navigation }: any) {
           Already have an account? <Text className="text-white font-semibold">Log in</Text>
         </Text>
       </TouchableOpacity>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </View>
   );
 }
