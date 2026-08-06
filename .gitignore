@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Env
+.env
+.env.local
+
+# Backend
+backend/dist/
+backend/prisma/dev.db
+
+# Expo / React Native
+mobile/.expo/
+mobile/dist/
+mobile/npm-debug.*
+mobile/*.jks
+mobile/*.p8
+mobile/*.p12
+mobile/*.key
+mobile/*.mobileprovision
+mobile/ios/
+mobile/android/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
