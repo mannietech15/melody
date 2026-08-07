@@ -49,9 +49,27 @@ export const Sidebar = () => {
           </button>
         </div>
 
-        {/* Playlists placeholder */}
-        <div className="flex-1 overflow-y-auto px-2 mt-2">
-          {/* We will implement the playlist section in the next steps */}
+        {/* Playlists */}
+        <div className="flex-1 overflow-y-auto mt-2">
+          <ul className="px-2 pb-2">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <li key={item} className="p-2 flex items-center gap-3 hover:bg-[#1A1A1A] rounded-md cursor-pointer group transition-colors">
+                <img 
+                  src={`https://picsum.photos/seed/${item}/50/50`} 
+                  alt="Playlist Cover" 
+                  className="w-12 h-12 rounded flex-shrink-0"
+                />
+                <div className="flex flex-col min-w-0 flex-1">
+                  <span className="text-white font-medium truncate">My Awesome Playlist {item}</span>
+                  <div className="flex items-center gap-1 text-sm text-spotify-text truncate">
+                    <span className="flex-shrink-0">Playlist</span>
+                    <span className="text-[10px] mx-1">•</span>
+                    <span className="truncate">Spotify User</span>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </aside>
