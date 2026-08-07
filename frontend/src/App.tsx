@@ -2,6 +2,7 @@ import React from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Topbar } from './components/Topbar';
 import { Home } from './components/Home';
+import { Player } from './components/Player';
 import './App.css';
 
 function App() {
@@ -21,9 +22,7 @@ function App() {
       </div>
 
       {/* Bottom section: Now Playing Bar */}
-      <footer className="h-24 bg-black border-t border-spotify-light px-4 flex items-center">
-        Now Playing Bar
-      </footer>
+      <Player />
     </div>
   );
 }
