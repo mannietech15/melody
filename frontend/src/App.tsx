@@ -1,4 +1,5 @@
 import React from 'react';
+import { Sidebar } from './components/Sidebar';
 import './App.css';
 
 function App() {
@@ -6,10 +7,7 @@ function App() {
     <div className="h-screen flex flex-col bg-spotify-base text-spotify-text">
       {/* Top section: Sidebar + Main Content */}
       <div className="flex-1 flex overflow-hidden">
-        {/* Sidebar placeholder */}
-        <aside className="w-64 bg-spotify-base flex flex-col p-2 gap-2">
-          <div className="bg-spotify-dark rounded-lg flex-1">Sidebar</div>
-        </aside>
+        <Sidebar />
 
         {/* Main Content placeholder */}
         <main className="flex-1 bg-spotify-dark rounded-lg m-2 ml-0 overflow-y-auto">
