@@ -27,9 +27,44 @@ export const Home = () => {
         ))}
       </div>
 
-      {/* Recommended Carousels Placeholder */}
-      <div className="flex flex-col gap-8 mt-4">
-        {/* Placeholder for Albums/Playlists */}
+      {/* Recommended Carousels */}
+      <div className="flex flex-col gap-8 mt-6 pb-20">
+        {[
+          { title: "Made For You" },
+          { title: "Recently played" },
+          { title: "More of what you like" }
+        ].map((section, idx) => (
+          <div key={idx} className="flex flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-white hover:underline cursor-pointer tracking-tight">
+                {section.title}
+              </h2>
+              <span className="text-sm font-bold text-spotify-text hover:underline cursor-pointer">Show all</span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              {[1, 2, 3, 4, 5].map((item) => (
+                <div key={item} className="bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className="relative mb-4">
+                    <img 
+                      src={`https://picsum.photos/seed/${section.title.replace(/\s+/g, '')}${item}/200/200`} 
+                      alt="Album Cover" 
+                      className="w-full aspect-square object-cover rounded-md shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+                    />
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#1fdf64]">
+                      <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24" fill="black">
+                        <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <h3 className="font-bold text-white mb-1 truncate">Daily Mix {item}</h3>
+                  <p className="text-sm text-spotify-text line-clamp-2">
+                    A custom mix tailored just for you. Discover new tracks and artists.
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
