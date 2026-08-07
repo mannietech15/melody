@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sidebar } from './components/Sidebar';
+import { Topbar } from './components/Topbar';
 import './App.css';
 
 function App() {
@@ -10,8 +11,11 @@ function App() {
         <Sidebar />
 
         {/* Main Content placeholder */}
-        <main className="flex-1 bg-spotify-dark rounded-lg m-2 ml-0 overflow-y-auto">
-          Main Content Area
+        <main className="flex-1 bg-spotify-dark rounded-lg m-2 ml-0 overflow-y-auto relative bg-gradient-to-b from-[#2a2a2a] to-spotify-dark">
+          <Topbar />
+          <div className="p-6">
+            Main Content Area
+          </div>
         </main>
       </div>
 
