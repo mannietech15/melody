@@ -1,48 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Home, Search, Library, Plus, ArrowRight } from 'lucide-react';
-
-interface Playlist {
-  id: number;
-  name: string;
-  author: string;
-}
+import React from 'react';
+import { Library, Plus, ArrowRight, Globe } from 'lucide-react';
 
 export const Sidebar = () => {
-  const [playlists, setPlaylists] = useState<Playlist[]>([]);
-
-  useEffect(() => {
-    fetch('http://localhost:8080/api/playlists')
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data)) setPlaylists(data);
-      })
-      .catch(err => console.error("Error fetching playlists", err));
-  }, []);
-
   return (
-    <aside className="w-[420px] bg-black flex flex-col p-2 gap-2 h-full text-spotify-text">
-      {/* Top Nav Section */}
-      <div className="bg-spotify-dark rounded-lg px-6 py-5 flex flex-col gap-6">
-        <div className="flex items-center gap-1 mb-2 text-white font-bold text-xl cursor-pointer">
-          {/* Simple Spotify Logo text placeholder */}
-          <span className="text-white text-2xl tracking-tighter">Spotify</span>
-        </div>
-        
-        <a href="#" className="flex items-center gap-4 text-spotify-white font-bold transition-colors hover:text-white">
-          <Home size={26} />
-          Home
-        </a>
-        <a href="#" className="flex items-center gap-4 font-semibold text-spotify-text transition-colors hover:text-white">
-          <Search size={26} />
-          Search
-        </a>
-      </div>
-
+    <aside className="w-[340px] bg-black flex flex-col p-2 h-full text-spotify-text">
       {/* Library Section */}
-      <div className="bg-spotify-dark rounded-lg flex-1 flex flex-col min-h-0">
-        <div className="px-6 pt-4 pb-2 flex items-center justify-between">
-          <button className="flex items-center gap-4 font-bold text-spotify-text hover:text-white transition-colors">
-            <Library size={26} />
+      <div className="bg-spotify-dark rounded-lg flex-1 flex flex-col min-h-0 relative">
+        <div className="px-4 pt-4 pb-2 flex items-center justify-between shadow-sm z-10">
+          <button className="flex items-center gap-4 font-bold text-spotify-text hover:text-white transition-colors py-2 px-2">
+            <Library size={24} />
             Your Library
           </button>
           
@@ -50,43 +16,48 @@ export const Sidebar = () => {
             <button className="p-2 hover:bg-[#1A1A1A] rounded-full text-spotify-text hover:text-white transition-all">
               <Plus size={20} />
             </button>
-            <button className="p-2 hover:bg-[#1A1A1A] rounded-full text-spotify-text hover:text-white transition-all">
-              <ArrowRight size={20} />
-            </button>
           </div>
         </div>
         
-        {/* Filters/Pills */}
-        <div className="px-6 py-2 flex gap-2">
-          <button className="bg-[#2a2a2a] hover:bg-[#333333] transition-colors text-white px-4 py-1.5 rounded-full text-sm font-semibold">
-            Playlists
-          </button>
-          <button className="bg-[#2a2a2a] hover:bg-[#333333] transition-colors text-white px-4 py-1.5 rounded-full text-sm font-semibold">
-            Artists
-          </button>
+        {/* Playlists / Podcasts Call to Action */}
+        <div className="flex-1 overflow-y-auto px-2 mt-2 flex flex-col gap-6">
+          <div className="bg-[#242424] rounded-lg p-5 flex flex-col gap-4">
+            <div className="flex flex-col gap-1">
+              <span className="text-white font-bold text-[15px]">Create your first playlist</span>
+              <span className="text-sm font-medium">It's easy, we'll help you</span>
+            </div>
+            <button className="bg-white text-black font-bold text-sm px-4 py-1.5 rounded-full w-fit hover:scale-105 transition-transform">
+              Create playlist
+            </button>
+          </div>
+
+          <div className="bg-[#242424] rounded-lg p-5 flex flex-col gap-4">
+            <div className="flex flex-col gap-1">
+              <span className="text-white font-bold text-[15px]">Let's find some podcasts to follow</span>
+              <span className="text-sm font-medium">We'll keep you updated on new episodes</span>
+            </div>
+            <button className="bg-white text-black font-bold text-sm px-4 py-1.5 rounded-full w-fit hover:scale-105 transition-transform">
+              Browse podcasts
+            </button>
+          </div>
         </div>
 
-        {/* Playlists */}
-        <div className="flex-1 overflow-y-auto mt-2">
-          <ul className="px-2 pb-2">
-            {playlists.map((item) => (
-              <li key={item.id} className="p-2 flex items-center gap-3 hover:bg-[#1A1A1A] rounded-md cursor-pointer group transition-colors">
-                <img 
-                  src={`https://picsum.photos/seed/playlist${item.id}/50/50`} 
-                  alt="Playlist Cover" 
-                  className="w-12 h-12 rounded flex-shrink-0"
-                />
-                <div className="flex flex-col min-w-0 flex-1">
-                  <span className="text-white font-medium truncate">{item.name}</span>
-                  <div className="flex items-center gap-1 text-sm text-spotify-text truncate">
-                    <span className="flex-shrink-0">Playlist</span>
-                    <span className="text-[10px] mx-1">•</span>
-                    <span className="truncate">{item.author}</span>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+        {/* Footer Links */}
+        <div className="px-6 pb-8 pt-4 flex flex-col gap-8">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-[11px] font-medium text-spotify-text">
+            <a href="#" className="hover:underline">Legal</a>
+            <a href="#" className="hover:underline">Safety & Privacy Center</a>
+            <a href="#" className="hover:underline">Privacy Policy</a>
+            <a href="#" className="hover:underline">Cookie Settings</a>
+            <a href="#" className="hover:underline">About Ads</a>
+            <a href="#" className="hover:underline">Accessibility</a>
+            <a href="#" className="hover:underline">Cookies</a>
+          </div>
+          
+          <button className="flex items-center gap-1 border border-[#878787] hover:border-white hover:scale-105 transition-all text-white text-sm font-bold px-3 py-1 rounded-full w-fit">
+            <Globe size={16} />
+            English
+          </button>
         </div>
       </div>
     </aside>
