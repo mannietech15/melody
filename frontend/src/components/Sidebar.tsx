@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Home, Search, Library, Plus, ArrowRight } from 'lucide-react';
 
+interface Playlist {
+  id: number;
+  name: string;
+  author: string;
+}
+
 export const Sidebar = () => {
+  const [playlists, setPlaylists] = useState<Playlist[]>([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/api/playlists')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) setPlaylists(data);
+      })
+      .catch(err => console.error("Error fetching playlists", err));
+  }, []);
+
   return (
     <aside className="w-[420px] bg-black flex flex-col p-2 gap-2 h-full text-spotify-text">
       {/* Top Nav Section */}
@@ -52,19 +69,19 @@ export const Sidebar = () => {
         {/* Playlists */}
         <div className="flex-1 overflow-y-auto mt-2">
           <ul className="px-2 pb-2">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-              <li key={item} className="p-2 flex items-center gap-3 hover:bg-[#1A1A1A] rounded-md cursor-pointer group transition-colors">
+            {playlists.map((item) => (
+              <li key={item.id} className="p-2 flex items-center gap-3 hover:bg-[#1A1A1A] rounded-md cursor-pointer group transition-colors">
                 <img 
-                  src={`https://picsum.photos/seed/${item}/50/50`} 
+                  src={`https://picsum.photos/seed/playlist${item.id}/50/50`} 
                   alt="Playlist Cover" 
                   className="w-12 h-12 rounded flex-shrink-0"
                 />
                 <div className="flex flex-col min-w-0 flex-1">
-                  <span className="text-white font-medium truncate">My Awesome Playlist {item}</span>
+                  <span className="text-white font-medium truncate">{item.name}</span>
                   <div className="flex items-center gap-1 text-sm text-spotify-text truncate">
                     <span className="flex-shrink-0">Playlist</span>
                     <span className="text-[10px] mx-1">•</span>
-                    <span className="truncate">Spotify User</span>
+                    <span className="truncate">{item.author}</span>
                   </div>
                 </div>
               </li>

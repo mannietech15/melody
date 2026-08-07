@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+interface Recent {
+  id: number;
+  name: string;
+}
 
 export const Home = () => {
+  const [recent, setRecent] = useState<Recent[]>([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/api/recent')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) setRecent(data);
+      })
+      .catch(err => console.error("Error fetching recent", err));
+  }, []);
+
   return (
     <div className="flex flex-col gap-6">
       {/* Greeting */}
@@ -8,15 +24,15 @@ export const Home = () => {
       
       {/* Recently Played Area */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-4">
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-          <div key={item} className="bg-white/10 hover:bg-white/20 transition-colors flex items-center rounded overflow-hidden cursor-pointer group h-16">
+        {recent.map((item) => (
+          <div key={item.id} className="bg-white/10 hover:bg-white/20 transition-colors flex items-center rounded overflow-hidden cursor-pointer group h-16">
             <img 
-              src={`https://picsum.photos/seed/recent${item}/80/80`} 
+              src={`https://picsum.photos/seed/recent${item.id}/80/80`} 
               alt="Cover" 
               className="h-16 w-16 shadow-[0_8px_24px_rgba(0,0,0,0.5)] object-cover"
             />
             <span className="font-bold text-white ml-4 text-sm truncate pr-4 flex-1">
-              Mix {item}
+              {item.name}
             </span>
             <button className="h-10 w-10 bg-spotify-green rounded-full flex items-center justify-center mr-4 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
               <svg role="img" height="20" width="20" aria-hidden="true" viewBox="0 0 24 24" fill="black">
