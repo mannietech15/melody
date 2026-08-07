@@ -1,6 +1,8 @@
 import React from 'react';
 
 export const Home = () => {
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  
   return (
     <div className="flex flex-col gap-8 pb-20">
       
@@ -12,9 +14,9 @@ export const Home = () => {
           </h2>
           <span className="text-sm font-bold text-spotify-text hover:underline cursor-pointer">Show all</span>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div key={item} className="bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+        <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {items.map((item) => (
+            <div key={item} className="flex-none w-[160px] xl:w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
               <div className="relative mb-4">
                 <img 
                   src={`https://picsum.photos/seed/trending${item}/200/200`} 
@@ -42,9 +44,9 @@ export const Home = () => {
           </h2>
           <span className="text-sm font-bold text-spotify-text hover:underline cursor-pointer">Show all</span>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div key={item} className="bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+        <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {items.map((item) => (
+            <div key={item} className="flex-none w-[160px] xl:w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
               <div className="relative mb-4">
                 <img 
                   src={`https://picsum.photos/seed/artist${item}/200/200`} 
@@ -72,9 +74,9 @@ export const Home = () => {
           </h2>
           <span className="text-sm font-bold text-spotify-text hover:underline cursor-pointer">Show all</span>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div key={item} className="bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+        <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {items.map((item) => (
+            <div key={item} className="flex-none w-[160px] xl:w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
               <div className="relative mb-4">
                 <img 
                   src={`https://picsum.photos/seed/album${item}/200/200`} 
