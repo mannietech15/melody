@@ -3,17 +3,17 @@ import { Library, Plus, ArrowRight, Globe } from 'lucide-react';
 
 export const Sidebar = () => {
   return (
-    <aside className="w-[340px] bg-black flex flex-col p-2 h-full text-spotify-text">
+    <aside className="w-[340px] bg-black flex flex-col p-2 h-full text-melody-text">
       {/* Library Section */}
-      <div className="bg-spotify-dark rounded-lg flex-1 flex flex-col min-h-0 relative">
+      <div className="bg-melody-dark rounded-lg flex-1 flex flex-col min-h-0 relative">
         <div className="px-4 pt-4 pb-2 flex items-center justify-between shadow-sm z-10">
-          <button className="flex items-center gap-4 font-bold text-spotify-text hover:text-white transition-colors py-2 px-2">
+          <button className="flex items-center gap-4 font-bold text-melody-text hover:text-white transition-colors py-2 px-2">
             <Library size={24} />
             Your Library
           </button>
           
           <div className="flex items-center gap-2">
-            <button className="p-2 hover:bg-[#1A1A1A] rounded-full text-spotify-text hover:text-white transition-all">
+            <button className="p-2 hover:bg-[#1A1A1A] rounded-full text-melody-text hover:text-white transition-all">
               <Plus size={20} />
             </button>
           </div>
@@ -44,7 +44,7 @@ export const Sidebar = () => {
 
         {/* Footer Links */}
         <div className="px-6 pb-8 pt-4 flex flex-col gap-8">
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-[11px] font-medium text-spotify-text">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-[11px] font-medium text-melody-text">
             <a href="#" className="hover:underline">Legal</a>
             <a href="#" className="hover:underline">Safety & Privacy Center</a>
             <a href="#" className="hover:underline">Privacy Policy</a>

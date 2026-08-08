@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        spotify: {
-          green: '#1DB954',
+        melody: {
+          red: '#E50914',
           dark: '#121212',
           base: '#191414',
           light: '#282828',

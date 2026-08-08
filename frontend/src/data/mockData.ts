@@ -1,9 +1,9 @@
 export const playlists = [
-  { id: 1, name: "Chill Vibes", author: "Spotify" },
+  { id: 1, name: "Chill Vibes", author: "Melody" },
   { id: 2, name: "Coding Focus", author: "Mannie" },
-  { id: 3, name: "Top 50 Global", author: "Spotify" },
-  { id: 4, name: "Discover Weekly", author: "Spotify" },
-  { id: 5, name: "Release Radar", author: "Spotify" },
+  { id: 3, name: "Top 50 Global", author: "Melody" },
+  { id: 4, name: "Discover Weekly", author: "Melody" },
+  { id: 5, name: "Release Radar", author: "Melody" },
 ];
 
 export const recentlyPlayed = [

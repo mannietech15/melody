@@ -4,7 +4,7 @@ export const Player = () => {
   return (
     <footer className="h-20 bg-gradient-to-r from-[#af2896] to-[#509bf5] px-6 py-2 flex items-center justify-between z-50 cursor-pointer">
       <div className="flex flex-col justify-center">
-        <span className="text-[13px] font-bold text-white uppercase tracking-wider mb-1">Preview of Spotify</span>
+        <span className="text-[13px] font-bold text-white uppercase tracking-wider mb-1">Preview of Melody</span>
         <span className="text-[15px] font-medium text-white">Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</span>
       </div>
 

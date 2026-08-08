@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-spotify-dark text-spotify-white font-sans m-0 p-0 overflow-hidden;
+    @apply bg-melody-dark text-melody-white font-sans m-0 p-0 overflow-hidden;
   }
 }

@@ -6,8 +6,9 @@ export const Topbar = () => {
     <header className="h-16 bg-black flex items-center justify-between px-6 sticky top-0 z-10 w-full">
       {/* Left: Logo */}
       <div className="flex items-center w-[20%] min-w-fit">
-        <span className="text-white text-2xl tracking-tighter font-bold cursor-pointer hover:scale-105 transition-transform">
-          Spotify
+        <span className="text-white text-2xl tracking-tighter font-bold cursor-pointer hover:scale-105 transition-transform flex items-center gap-2">
+          {/* We will replace this with a real logo image later if needed, for now just text */}
+          <span className="text-melody-red text-3xl">♪</span> Melody
         </span>
       </div>
 
@@ -17,21 +18,21 @@ export const Topbar = () => {
           <Home size={24} className="group-hover:scale-105 transition-transform" fill="currentColor" />
         </button>
         <div className="flex items-center bg-[#1f1f1f] hover:bg-[#2a2a2a] hover:border-[#333] border border-transparent transition-all rounded-full px-4 py-3 w-full max-w-md group">
-          <Search size={22} className="text-spotify-text group-hover:text-white transition-colors mr-3" />
+          <Search size={22} className="text-melody-text group-hover:text-white transition-colors mr-3" />
           <input 
             type="text" 
             placeholder="What do you want to play?" 
-            className="bg-transparent text-white focus:outline-none w-full placeholder:text-spotify-text font-medium"
+            className="bg-transparent text-white focus:outline-none w-full placeholder:text-melody-text font-medium"
           />
           <div className="border-l border-[#444] pl-3 ml-2 flex items-center cursor-pointer hover:scale-105 transition-transform">
-            <Globe size={20} className="text-spotify-text hover:text-white transition-colors" />
+            <Globe size={20} className="text-melody-text hover:text-white transition-colors" />
           </div>
         </div>
       </div>
 
       {/* Right: Auth & Links */}
       <div className="flex items-center gap-6 w-[35%] justify-end min-w-fit">
-        <div className="hidden lg:flex items-center gap-4 text-spotify-text font-bold text-sm">
+        <div className="hidden lg:flex items-center gap-4 text-melody-text font-bold text-sm">
           <a href="#" className="hover:text-white hover:scale-105 transition-all">Premium</a>
           <a href="#" className="hover:text-white hover:scale-105 transition-all">Support</a>
           <a href="#" className="hover:text-white hover:scale-105 transition-all">Download</a>
@@ -40,11 +41,11 @@ export const Topbar = () => {
         <div className="hidden lg:block h-6 w-px bg-white/20"></div>
 
         <div className="flex items-center gap-4">
-          <button className="hidden xl:flex items-center gap-1 text-spotify-text hover:text-white font-bold text-sm hover:scale-105 transition-all">
+          <button className="hidden xl:flex items-center gap-1 text-melody-text hover:text-white font-bold text-sm hover:scale-105 transition-all">
             <Download size={16} />
             Install App
           </button>
-          <button className="text-spotify-text hover:text-white font-bold text-[15px] hover:scale-105 transition-all">
+          <button className="text-melody-text hover:text-white font-bold text-[15px] hover:scale-105 transition-all">
             Sign up
           </button>
           <button className="bg-white text-black font-bold text-[15px] px-8 py-3 rounded-full hover:scale-105 hover:bg-gray-100 transition-all">
