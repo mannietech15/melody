@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Home, Search, Download, Globe, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Library, Plus, ArrowRight, Globe } from 'lucide-react';
+
+import { Library, Plus, Globe } from 'lucide-react';
 
 export const Sidebar = () => {
   return (
