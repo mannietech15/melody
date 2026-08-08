@@ -11,7 +11,7 @@ func main() {
 		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		playlists := []map[string]interface{}{
-			{"id": 1, "name": "Chill Vibes", "author": "Spotify"},
+			{"id": 1, "name": "Chill Vibes", "author": "Melody"},
 			{"id": 2, "name": "Coding Focus", "author": "Mannie"},
 		}
 		json.NewEncoder(w).Encode(playlists)

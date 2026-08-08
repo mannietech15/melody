@@ -1,6 +1,6 @@
-# Spotify Clone
+# Melody
 
-A full-stack Spotify clone:
+A full-stack Melody clone:
 
 - **mobile/** — React Native (Expo) + TypeScript + NativeWind (Tailwind CSS for RN)
 - **backend/** — Node.js + Apollo GraphQL Server + PostgreSQL (Prisma ORM)
@@ -118,7 +118,7 @@ vercel --prod dist
 
 Netlify: drag-and-drop the `mobile/dist` folder at https://app.netlify.com/drop, or use the Netlify CLI.
 
-You'll get a shareable URL like `https://spotify-clone.vercel.app` — that's the link to send people.
+You'll get a shareable URL like `https://melody.vercel.app` — that's the link to send people.
 
 ### Wire the two together
 
@@ -164,7 +164,7 @@ spotify-clone/
 │   └── Dockerfile
 └── mobile/
     ├── App.tsx
-    ├── tailwind.config.js         # Spotify-style dark theme tokens
+    ├── tailwind.config.js         # Melody-style dark theme tokens
     └── src/
         ├── apollo/client.ts       # Apollo Client + auth link
         ├── context/               # AuthContext, PlayerContext (expo-av)
@@ -181,7 +181,7 @@ spotify-clone/
 - ✅ Create/view/delete playlists, add/remove tracks
 - ✅ Like/unlike songs, "Liked Songs" screen
 - ✅ Bottom mini-player + full-screen player with 30s preview playback
-- ✅ Spotify-style dark UI (bottom tabs, green accent, rounded artwork)
+- ✅ Melody-style dark UI (bottom tabs, red accent, rounded artwork)
 
 ## Next steps you may want
 
