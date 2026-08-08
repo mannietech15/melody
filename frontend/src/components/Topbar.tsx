@@ -1,9 +1,10 @@
 import { Home, Search, Download, Globe, Bell, Users, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export const Topbar = () => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <header className="h-16 flex items-center justify-between px-6 py-2 sticky top-0 z-10 w-full bg-[#121212] rounded-t-lg">
@@ -29,6 +30,7 @@ export const Topbar = () => {
             type="text" 
             placeholder="What do you want to play?" 
             className="bg-transparent text-white focus:outline-none w-full placeholder:text-melody-text font-medium text-sm"
+            onFocus={() => navigate('/search')}
           />
           <div className="border-l border-[#444] pl-3 ml-2 flex items-center cursor-pointer hover:scale-105 transition-transform">
             <Globe size={20} className="text-melody-text hover:text-white transition-colors" />

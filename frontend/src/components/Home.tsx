@@ -1,13 +1,13 @@
 import { usePlayer } from '../context/PlayerContext';
-import { mockSongs } from '../data/mockSongs';
+
 
 export const Home = () => {
-  const { playSong, currentSong, isPlaying, togglePlayPause } = usePlayer();
+  const { playSong, currentSong, isPlaying, togglePlayPause, songs } = usePlayer();
   const items = [1, 2, 3, 4, 5, 6, 7, 8];
 
   const handlePlay = (songId: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    const song = mockSongs.find(s => s.id === songId);
+    const song = songs.find(s => s.id === songId);
     if (song) {
       if (currentSong?.id === song.id) {
         togglePlayPause();
@@ -35,7 +35,7 @@ export const Home = () => {
 
       {/* Recently Played Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-        {mockSongs.map((song) => {
+        {songs.map((song) => {
           const isThisPlaying = currentSong?.id === song.id && isPlaying;
           return (
             <div 

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"strings"
 )
 
 type LyricLine struct {
@@ -113,8 +114,6 @@ func main() {
 }
 
 func matchesQuery(song Song, query string) bool {
-	// simple case insensitive search
-	// this would usually be done with strings.Contains(strings.ToLower(...))
-	return true // We'll handle filtering on the frontend for now to keep it simple, or implement it fully.
-	// Actually, let's implement basic search
+	q := strings.ToLower(query)
+	return strings.Contains(strings.ToLower(song.Title), q) || strings.Contains(strings.ToLower(song.Artist), q) || strings.Contains(strings.ToLower(song.Album), q)
 }
