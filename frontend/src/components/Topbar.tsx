@@ -1,24 +1,28 @@
 import React from 'react';
-import { Home, Search, Download, Globe } from 'lucide-react';
+import { Home, Search, Download, Globe, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 export const Topbar = () => {
+  const { user, logout } = useAuth();
+
   return (
     <header className="h-16 bg-black flex items-center justify-between px-6 sticky top-0 z-10 w-full">
       {/* Left: Logo */}
       <div className="flex items-center w-[20%] min-w-fit">
-        <div className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform">
+        <Link to="/" className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform">
           <img src="/logo.png" alt="Melody Logo" className="w-10 h-10 object-contain rounded-md" />
           <span className="text-white text-2xl tracking-tighter font-bold">
             Melody
           </span>
-        </div>
+        </Link>
       </div>
 
       {/* Center: Search & Home */}
       <div className="flex items-center gap-2 flex-1 justify-center max-w-2xl">
-        <button className="bg-[#1f1f1f] hover:bg-[#2a2a2a] rounded-full p-3 text-white transition-colors cursor-pointer group">
+        <Link to="/" className="bg-[#1f1f1f] hover:bg-[#2a2a2a] rounded-full p-3 text-white transition-colors cursor-pointer group">
           <Home size={24} className="group-hover:scale-105 transition-transform" fill="currentColor" />
-        </button>
+        </Link>
         <div className="flex items-center bg-[#1f1f1f] hover:bg-[#2a2a2a] hover:border-[#333] border border-transparent transition-all rounded-full px-4 py-3 w-full max-w-md group">
           <Search size={22} className="text-melody-text group-hover:text-white transition-colors mr-3" />
           <input 
@@ -43,18 +47,36 @@ export const Topbar = () => {
         <div className="hidden lg:block h-6 w-px bg-white/20"></div>
 
         <div className="flex items-center gap-4">
-          <button className="hidden xl:flex items-center gap-1 text-melody-text hover:text-white font-bold text-sm hover:scale-105 transition-all">
+          <button className="hidden xl:flex items-center gap-1 text-melody-text hover:text-white font-bold text-sm hover:scale-105 transition-all mr-2">
             <Download size={16} />
             Install App
           </button>
-          <button className="text-melody-text hover:text-white font-bold text-[15px] hover:scale-105 transition-all">
-            Sign up
-          </button>
-          <button className="bg-white text-black font-bold text-[15px] px-8 py-3 rounded-full hover:scale-105 hover:bg-gray-100 transition-all">
-            Log in
-          </button>
+          
+          {user ? (
+            <div className="flex items-center gap-4">
+              <button 
+                onClick={logout}
+                className="text-melody-text hover:text-white font-bold text-[15px] hover:scale-105 transition-all"
+              >
+                Log out
+              </button>
+              <div className="w-10 h-10 bg-[#1f1f1f] hover:bg-[#2a2a2a] rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform border-[3px] border-black">
+                <User size={20} className="text-white" />
+              </div>
+            </div>
+          ) : (
+            <>
+              <Link to="/signup" className="text-melody-text hover:text-white font-bold text-[15px] hover:scale-105 transition-all">
+                Sign up
+              </Link>
+              <Link to="/login" className="bg-white text-black font-bold text-[15px] px-8 py-3 rounded-full hover:scale-105 hover:bg-gray-100 transition-all">
+                Log in
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>
   );
 };
+
