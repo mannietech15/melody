@@ -6,10 +6,12 @@ export const Topbar = () => {
     <header className="h-16 bg-black flex items-center justify-between px-6 sticky top-0 z-10 w-full">
       {/* Left: Logo */}
       <div className="flex items-center w-[20%] min-w-fit">
-        <span className="text-white text-2xl tracking-tighter font-bold cursor-pointer hover:scale-105 transition-transform flex items-center gap-2">
-          {/* We will replace this with a real logo image later if needed, for now just text */}
-          <span className="text-melody-red text-3xl">♪</span> Melody
-        </span>
+        <div className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform">
+          <img src="/logo.png" alt="Melody Logo" className="w-10 h-10 object-contain rounded-md" />
+          <span className="text-white text-2xl tracking-tighter font-bold">
+            Melody
+          </span>
+        </div>
       </div>
 
       {/* Center: Search & Home */}
