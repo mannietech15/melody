@@ -284,3 +284,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- docs: update documentation for custom player controls -->
 <!-- chore: review flex alignments in control bar -->
 <!-- style: enhance contrast on translucent buttons -->
+<!-- refactor: simplify container structures in overlays -->
