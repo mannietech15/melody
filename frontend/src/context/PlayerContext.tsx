@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useRef, useEffect, type ReactNode } from 'react';
-import { type Song, mockSongs } from '../data/mockSongs';
+import { type Song } from '../data/mockSongs';
 
 interface PlayerContextType {
   currentSong: Song | null;
@@ -17,6 +17,7 @@ interface PlayerContextType {
   toggleRightSidebar: () => void;
   playNext: () => void;
   playPrev: () => void;
+  songs: Song[];
 }
 
 const PlayerContext = createContext<PlayerContextType | undefined>(undefined);
@@ -29,6 +30,7 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
   const [volume, setVolumeState] = useState(1);
   const [isLyricsOpen, setIsLyricsOpen] = useState(false);
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
+  const [songs, setSongs] = useState<Song[]>([]);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -51,6 +53,18 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
       audio.removeEventListener('ended', onEnded);
       audio.pause();
     };
+  }, []);
+
+  useEffect(() => {
+    // Fetch songs from Go backend
+    fetch('http://localhost:8080/api/songs')
+      .then(res => res.json())
+      .then(data => {
+        if (data) {
+          setSongs(data);
+        }
+      })
+      .catch(err => console.error('Error fetching songs:', err));
   }, []);
 
   const playSong = (song: Song) => {
@@ -115,17 +129,17 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const playNext = () => {
-    if (!currentSong) return;
-    const currentIndex = mockSongs.findIndex(s => s.id === currentSong.id);
-    const nextIndex = (currentIndex + 1) % mockSongs.length;
-    playSong(mockSongs[nextIndex]);
+    if (!currentSong || songs.length === 0) return;
+    const currentIndex = songs.findIndex(s => s.id === currentSong.id);
+    const nextIndex = (currentIndex + 1) % songs.length;
+    playSong(songs[nextIndex]);
   };
 
   const playPrev = () => {
-    if (!currentSong) return;
-    const currentIndex = mockSongs.findIndex(s => s.id === currentSong.id);
-    const prevIndex = (currentIndex - 1 + mockSongs.length) % mockSongs.length;
-    playSong(mockSongs[prevIndex]);
+    if (!currentSong || songs.length === 0) return;
+    const currentIndex = songs.findIndex(s => s.id === currentSong.id);
+    const prevIndex = (currentIndex - 1 + songs.length) % songs.length;
+    playSong(songs[prevIndex]);
   };
 
   return (
@@ -146,6 +160,7 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
         toggleRightSidebar,
         playNext,
         playPrev,
+        songs,
       }}
     >
       {children}

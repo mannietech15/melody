@@ -1,15 +1,16 @@
 import { Home, Search, Download, Globe, Bell, Users, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export const Topbar = () => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <header className="h-16 flex items-center justify-between px-6 py-2 sticky top-0 z-10 w-full bg-[#121212] rounded-t-lg">
       
       {/* Left (Empty space for balance since logo is usually in sidebar now, but let's keep a tiny logo or just back/fwd arrows) */}
-      <div className="flex items-center gap-2 w-[20%] min-w-fit">
+      <div className="hidden md:flex items-center gap-2 w-[20%] min-w-fit">
         <button className="w-8 h-8 bg-black/40 rounded-full flex items-center justify-center text-white/60 cursor-not-allowed">
           <svg viewBox="0 0 16 16" className="w-4 h-4 fill-current"><path d="M11.03.47a.75.75 0 010 1.06L4.56 8l6.47 6.47a.75.75 0 11-1.06 1.06L2.44 8 9.97.47a.75.75 0 011.06 0z"/></svg>
         </button>
@@ -29,29 +30,30 @@ export const Topbar = () => {
             type="text" 
             placeholder="What do you want to play?" 
             className="bg-transparent text-white focus:outline-none w-full placeholder:text-melody-text font-medium text-sm"
+            onFocus={() => navigate('/search')}
           />
-          <div className="border-l border-[#444] pl-3 ml-2 flex items-center cursor-pointer hover:scale-105 transition-transform">
+          <div className="hidden md:flex border-l border-[#444] pl-3 ml-2 items-center cursor-pointer hover:scale-105 transition-transform">
             <Globe size={20} className="text-melody-text hover:text-white transition-colors" />
           </div>
         </div>
       </div>
 
       {/* Right: Auth & Links */}
-      <div className="flex items-center gap-4 w-[35%] justify-end min-w-fit">
+      <div className="flex items-center gap-2 lg:gap-4 w-auto md:w-[35%] justify-end min-w-fit">
         
         {user ? (
           <>
-            <button className="bg-white text-black font-bold text-sm px-4 py-1.5 rounded-full hover:scale-105 transition-all">
+            <button className="hidden md:block bg-white text-black font-bold text-sm px-4 py-1.5 rounded-full hover:scale-105 transition-all">
               Explore Premium
             </button>
-            <button className="flex items-center gap-1 text-melody-text hover:text-white font-bold text-sm hover:scale-105 transition-all mr-2">
+            <button className="hidden lg:flex items-center gap-1 text-melody-text hover:text-white font-bold text-sm hover:scale-105 transition-all mr-2">
               <Download size={16} />
               Install App
             </button>
-            <button className="text-melody-text hover:text-white hover:scale-105 transition-transform">
+            <button className="hidden md:block text-melody-text hover:text-white hover:scale-105 transition-transform">
               <Bell size={18} />
             </button>
-            <button className="text-melody-text hover:text-white hover:scale-105 transition-transform">
+            <button className="hidden md:block text-melody-text hover:text-white hover:scale-105 transition-transform">
               <Users size={18} />
             </button>
             <div 

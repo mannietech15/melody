@@ -29,7 +29,7 @@ export const Player = () => {
     return (
       <footer className="h-[90px] bg-black border-t border-[#282828] px-4 flex items-center justify-between z-50">
         {/* Left: Song Info */}
-        <div className="flex items-center w-[30%] min-w-[180px]">
+        <div className="flex items-center w-auto sm:w-auto md:w-[30%] max-w-[70%] sm:max-w-[45%] md:max-w-none md:min-w-[180px]">
           {currentSong ? (
             <>
               <div className="w-14 h-14 bg-[#282828] rounded flex-shrink-0 relative group">
@@ -38,11 +38,11 @@ export const Player = () => {
                   <svg viewBox="0 0 16 16" className="w-4 h-4 fill-white"><path d="M2.47 2.47a.75.75 0 011.06 0L8 6.94l4.47-4.47a.75.75 0 111.06 1.06L9.06 8l4.47 4.47a.75.75 0 11-1.06 1.06L8 9.06l-4.47 4.47a.75.75 0 01-1.06-1.06L6.94 8 2.47 3.53a.75.75 0 010-1.06z"/></svg>
                 </button>
               </div>
-              <div className="ml-3 flex flex-col justify-center max-w-[200px]">
+              <div className="ml-3 flex flex-col justify-center min-w-0 pr-2 truncate">
                 <span className="text-sm font-bold text-white hover:underline cursor-pointer truncate">{currentSong.title}</span>
                 <span className="text-[11px] text-melody-text hover:underline cursor-pointer truncate">{currentSong.artist}</span>
               </div>
-              <button className="ml-4 text-melody-red hover:scale-105 transition-transform shrink-0">
+              <button className="hidden sm:block ml-2 text-melody-red hover:scale-105 transition-transform shrink-0">
                 <svg viewBox="0 0 16 16" className="w-4 h-4 fill-current"><path d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-1.15-1.464l-.004-.01L.69 8.31a4.542 4.542 0 01-1.01-3.84A4.618 4.618 0 011.69 2z"/></svg>
               </button>
             </>
@@ -52,16 +52,16 @@ export const Player = () => {
         </div>
 
         {/* Center: Controls */}
-        <div className="flex flex-col items-center justify-center max-w-[40%] flex-1">
-          <div className="flex items-center gap-6 mb-2">
-            <button className="text-melody-text hover:text-white transition-colors disabled:opacity-50">
+        <div className="flex flex-col items-center sm:items-center justify-center flex-1 max-w-[60px] sm:max-w-full md:max-w-[40%] px-2 sm:mr-0 ml-auto">
+          <div className="flex items-center gap-4 sm:gap-6 mb-0 sm:mb-2">
+            <button className="hidden sm:block text-melody-text hover:text-white transition-colors disabled:opacity-50">
               <svg viewBox="0 0 16 16" className="w-4 h-4 fill-current"><path d="M13.151.922a.75.75 0 10-1.06 1.06L13.109 3H11.16a3.75 3.75 0 00-2.873 1.34l-6.173 7.356A2.25 2.25 0 01.39 12.5H0V14h.391a3.75 3.75 0 002.873-1.34l6.173-7.356a2.25 2.25 0 011.724-.804h1.947l-1.017 1.018a.75.75 0 001.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.59 2.765 1.5l2.457 3.684-1.246 1.485L2.124 5.385A2.25 2.25 0 00.39 3.5zM15.98 12.25L13.151 15.078a.75.75 0 11-1.06-1.06l1.018-1.018H11.16a2.25 2.25 0 01-1.724-.804L8.19 10.712l1.246-1.485 1.245 1.485a3.75 3.75 0 002.873 1.34h1.947l-1.017-1.018a.75.75 0 111.06-1.06l2.83 2.828z"/></svg>
             </button>
-            <button className="text-melody-text hover:text-white transition-colors" onClick={playPrev}>
+            <button className="hidden sm:block text-melody-text hover:text-white transition-colors" onClick={playPrev}>
               <svg viewBox="0 0 16 16" className="w-5 h-5 fill-current"><path d="M3.3 1a.7.7 0 01.7.7v5.15l9.95-5.744a.7.7 0 011.05.606v12.575a.7.7 0 01-1.05.607L4 9.149V14.3a.7.7 0 01-1.4 0V1.7a.7.7 0 01.7-.7z"/></svg>
             </button>
             <button 
-              className="w-8 h-8 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 transition-transform"
+              className="w-8 h-8 sm:w-8 sm:h-8 bg-white text-black rounded-full flex items-center justify-center hover:scale-105 transition-transform"
               onClick={togglePlayPause}
             >
               {isPlaying ? (
@@ -70,14 +70,14 @@ export const Player = () => {
                 <svg viewBox="0 0 16 16" className="w-4 h-4 fill-current ml-1"><path d="M3 1.713a.7.7 0 011.05-.607l10.89 6.288a.7.7 0 010 1.212L4.05 14.894A.7.7 0 013 14.288V1.713z"/></svg>
               )}
             </button>
-            <button className="text-melody-text hover:text-white transition-colors" onClick={playNext}>
+            <button className="hidden sm:block text-melody-text hover:text-white transition-colors" onClick={playNext}>
               <svg viewBox="0 0 16 16" className="w-5 h-5 fill-current"><path d="M12.7 1a.7.7 0 00-.7.7v5.15L2.05 1.106A.7.7 0 001 1.712v12.575a.7.7 0 001.05.607L12 9.149V14.3a.7.7 0 001.4 0V1.7a.7.7 0 00-.7-.7z"/></svg>
             </button>
-            <button className="text-melody-text hover:text-white transition-colors disabled:opacity-50">
+            <button className="hidden sm:block text-melody-text hover:text-white transition-colors disabled:opacity-50">
               <svg viewBox="0 0 16 16" className="w-4 h-4 fill-current"><path d="M0 4.75A3.75 3.75 0 013.75 1h8.5A3.75 3.75 0 0116 4.75v5a3.75 3.75 0 01-3.75 3.75H9.81l3.118 3.118a.75.75 0 11-1.06 1.06L8 13.84l-3.868 3.837a.75.75 0 11-1.06-1.06l3.118-3.118H3.75A3.75 3.75 0 010 9.75v-5zM3.75 2.5a2.25 2.25 0 00-2.25 2.25v5a2.25 2.25 0 002.25 2.25h8.5a2.25 2.25 0 002.25-2.25v-5a2.25 2.25 0 00-2.25-2.25h-8.5z"/></svg>
             </button>
           </div>
-          <div className="flex items-center w-full gap-2 max-w-[500px]">
+          <div className="hidden sm:flex items-center w-full gap-2 max-w-[500px]">
             <span className="text-[11px] text-melody-text w-10 text-right">{formatTime(progress)}</span>
             <input 
               type="range" 
@@ -92,7 +92,7 @@ export const Player = () => {
         </div>
 
         {/* Right: Actions */}
-        <div className="flex items-center justify-end w-[30%] min-w-[180px] gap-3">
+        <div className="hidden md:flex items-center justify-end w-[30%] min-w-[180px] gap-3">
           <button 
             className={`${isRightSidebarOpen && !isLyricsOpen ? 'text-melody-red' : 'text-melody-text'} hover:text-white transition-colors`}
             onClick={toggleRightSidebar}
