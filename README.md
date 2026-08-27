@@ -201,3 +201,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: fine-tune radio badge positioning -->
 <!-- fix: ensure scrollbar remains hidden on new rows -->
 <!-- refactor: abstract common card styling -->
+<!-- chore: validate image seed generation for podcasts -->
