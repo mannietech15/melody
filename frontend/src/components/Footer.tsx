@@ -20,7 +20,7 @@ export const Footer = () => {
             <a href="#" className="text-melody-text hover:text-white hover:underline">Vendors</a>
           </div>
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-white">Useful links</h4>
+            <h4 className="font-bold text-white">Useful links <!-- section --></h4>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Support</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Free Mobile App</a>
           </div>
