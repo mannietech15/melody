@@ -218,3 +218,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- docs: update layout documentation -->
 <!-- chore: prep for dynamic data integration -->
 <!-- style: tweak typography in large cards -->
+<!-- refactor: clean up unused variables -->
