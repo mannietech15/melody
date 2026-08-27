@@ -6,13 +6,13 @@ export const Footer = () => {
       <div className="mt-12 pt-10 flex flex-col md:flex-row justify-between gap-8 pb-20">
         <div className="flex gap-16 flex-wrap">
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-white">Company <!-- section --></h4>
+            <h4 className="font-bold text-white">Company</h4>
             <a href="#" className="text-melody-text hover:text-white hover:underline">About</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Jobs</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">For the Record</a>
           </div>
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-white">Communities <!-- section --></h4>
+            <h4 className="font-bold text-white">Communities</h4>
             <a href="#" className="text-melody-text hover:text-white hover:underline">For Artists</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Developers</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Advertising</a>
@@ -20,12 +20,12 @@ export const Footer = () => {
             <a href="#" className="text-melody-text hover:text-white hover:underline">Vendors</a>
           </div>
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-white">Useful links <!-- section --></h4>
+            <h4 className="font-bold text-white">Useful links</h4>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Support</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Free Mobile App</a>
           </div>
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-white">Spotify Plans <!-- section --></h4>
+            <h4 className="font-bold text-white">Spotify Plans</h4>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Premium Individual</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Premium Duo</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Premium Family</a>
