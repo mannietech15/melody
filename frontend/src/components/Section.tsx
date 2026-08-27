@@ -26,7 +26,7 @@ export const Section: React.FC<SectionProps> = ({ title, isCircular = false }) =
                 className={`w-full aspect-square object-cover shadow-lg ${isCircular ? 'rounded-full' : 'rounded-md'}`}
               />
               <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 drop-shadow-md bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
-                <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24" fill="black">
+                <svg role="img" height="24" width="24" className="text-black" aria-hidden="true" viewBox="0 0 24 24" fill="black">
                   <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path>
                 </svg>
               </button>
