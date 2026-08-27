@@ -176,3 +176,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- fix: ensure consistent image aspect ratios -->
 <!-- refactor: simplify grid layout properties -->
 <!-- chore: update internal dependencies -->
+<!-- style: tweak hover states on playable cards -->
