@@ -294,3 +294,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: audit console warnings for SVG icons -->
 <!-- style: smooth transitions in newly added controls -->
 <!-- docs: document absolute positioning of control bar -->
+<!-- chore: finalize interactive elements for beta preview -->
