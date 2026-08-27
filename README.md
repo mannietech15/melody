@@ -187,3 +187,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: review accessibility of image alts -->
 <!-- style: fine-tune typography in sidebar -->
 <!-- refactor: consolidate flexbox classes -->
+<!-- chore: prep for upcoming feature toggle -->
