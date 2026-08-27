@@ -224,3 +224,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- docs: document shadow utilities -->
 <!-- chore: review accessibility of new images -->
 <!-- style: fine-tune hover opacity -->
+<!-- refactor: modularize station rendering -->
