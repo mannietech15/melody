@@ -242,3 +242,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: abstract album art styling -->
 <!-- chore: test seeded image reliability for new rows -->
 <!-- style: fine-tune play button hover effects -->
+<!-- docs: update documentation for Lifer custom card UI -->
