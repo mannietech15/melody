@@ -256,3 +256,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: smooth transitions in newly added rows -->
 <!-- docs: document absolute positioning in custom cards -->
 <!-- chore: prep for fetching dynamic large card data -->
+<!-- style: tweak flex gaps between distinct sections -->
