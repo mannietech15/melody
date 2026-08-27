@@ -266,3 +266,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: modularize custom card rendering -->
 <!-- chore: optimize SVG icon sizes -->
 <!-- style: adjust typography weights in section headers -->
+<!-- docs: clarify z-index layering for custom layouts -->
