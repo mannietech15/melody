@@ -286,3 +286,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: enhance contrast on translucent buttons -->
 <!-- refactor: simplify container structures in overlays -->
 <!-- chore: validate click targets for preview buttons -->
+<!-- style: adjust border radius on continue button -->
