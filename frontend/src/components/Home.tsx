@@ -419,12 +419,23 @@ export const Home = () => {
                     <span className="text-white/80 text-sm mt-1">Playlist • Spotify</span>
                   </div>
                 </div>
-                <div className="absolute bottom-5 left-5 right-5 text-white/80 text-sm font-medium line-clamp-2 z-10">
-                  With Josiah Queen, I OST & FOUND, Jordan Feliz and more
+                <div className="absolute bottom-16 left-5 right-5 text-white/80 text-[13px] font-medium line-clamp-2 z-10">
+                  With Josiah Queen, LOST & FOUND, Jordan Feliz and more
                 </div>
-                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612] z-20">
-                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                </button>
+                <div className="flex items-center justify-between z-10 absolute bottom-4 left-5 right-5">
+                  <button className="bg-black/20 hover:bg-black/30 text-white font-bold text-[13px] px-4 py-1.5 rounded-full transition-colors flex items-center gap-2">
+                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM9.5 15.5v-7l6 3.5-6 3.5z"></path></svg>
+                     Preview
+                  </button>
+                  <div className="flex gap-4 items-center">
+                    <div className="flex gap-2 text-white/80 font-bold items-center">
+                        ••• <span className="border border-white/60 rounded-full w-5 h-5 flex items-center justify-center text-sm">+</span>
+                    </div>
+                    <button className="h-10 w-10 bg-white rounded-full flex items-center justify-center transition-all hover:scale-105 shadow-xl">
+                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
             
@@ -436,14 +447,16 @@ export const Home = () => {
                   <span className="text-white/80 text-sm font-medium">Episode • Bloomberg Tech</span>
                 </div>
                 <div className="flex justify-center my-2 relative z-10">
-                  <img src="https://picsum.photos/seed/bloomberg/150" className="w-32 h-32 rounded-xl shadow-2xl" alt="Bloomberg" />
+                  <div className="relative">
+                    <img src="https://picsum.photos/seed/bloomberg/150" className="w-32 h-32 rounded-xl shadow-2xl" alt="Bloomberg" />
+                    <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black font-bold text-[13px] px-5 py-2.5 rounded-full whitespace-nowrap shadow-2xl hover:scale-105 transition-transform z-20">
+                      Continue playing
+                    </button>
+                  </div>
                 </div>
                 <div className="text-white/80 text-[13px] font-medium line-clamp-2 z-10 mt-auto">
                   Aug 25 • 44 min 15 sec • Bloomberg's Ed Ludlow breaks down what to expect...
                 </div>
-                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 z-20">
-                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                </button>
               </div>
             </div>
 
@@ -598,17 +611,19 @@ export const Home = () => {
                   <span className="text-white/80 text-sm font-medium">Episode • 5 Minute AI News - Daily</span>
                 </div>
                 <div className="flex justify-center my-2 relative z-10">
-                  <div className="w-32 h-32 rounded-xl shadow-2xl bg-white flex flex-col items-center justify-center border border-gray-200">
-                    <span className="text-[#b00f24] font-black text-6xl">5</span>
-                    <span className="text-[#b00f24] text-[8px] font-bold tracking-widest mt-1">NEW PLAYING • TODAY'S S</span>
+                  <div className="relative">
+                    <div className="w-32 h-32 rounded-xl shadow-2xl bg-white flex flex-col items-center justify-center border border-gray-200">
+                      <span className="text-[#b00f24] font-black text-6xl">5</span>
+                      <span className="text-[#b00f24] text-[8px] font-bold tracking-widest mt-1">NEW PLAYING • TODAY'S S</span>
+                    </div>
+                    <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black font-bold text-[13px] px-5 py-2.5 rounded-full whitespace-nowrap shadow-2xl hover:scale-105 transition-transform z-20 border border-black/5">
+                      Continue playing
+                    </button>
                   </div>
                 </div>
                 <div className="text-white/80 text-[13px] font-medium line-clamp-2 z-10 mt-auto">
                   Aug 26 • 4 min 51 sec • OpenAI reveals its custom Jalapeno chip, Apple launches Macs optimized...
                 </div>
-                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 z-20">
-                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                </button>
               </div>
             </div>
             
