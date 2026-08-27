@@ -252,3 +252,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: remove legacy styles from large cards -->
 <!-- style: tweak typography in custom 5 Minute AI card -->
 <!-- refactor: consolidate shadow variables -->
+<!-- chore: audit console warnings for missing keys -->
