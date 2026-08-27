@@ -192,3 +192,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- docs: document new gradient background -->
 <!-- chore: audit console warnings -->
 <!-- style: optimize scrollbar hiding css -->
+<!-- refactor: abstract hardcoded strings -->
