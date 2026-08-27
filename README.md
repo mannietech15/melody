@@ -223,3 +223,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: adjust padding in playlist section -->
 <!-- docs: document shadow utilities -->
 <!-- chore: review accessibility of new images -->
+<!-- style: fine-tune hover opacity -->
