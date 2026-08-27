@@ -174,3 +174,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: prepare assets for production build -->
 <!-- style: adjust padding in sidebar components -->
 <!-- fix: ensure consistent image aspect ratios -->
+<!-- refactor: simplify grid layout properties -->
