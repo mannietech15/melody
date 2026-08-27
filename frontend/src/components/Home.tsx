@@ -17,9 +17,6 @@ export const Home = () => {
       } else {
         playSong(song);
       }
-    }
-  };
-
   return (
     <div className={`flex flex-col gap-8 pb-20 mt-4 relative z-10 ${!user ? 'px-4' : ''}`}>
       
