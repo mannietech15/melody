@@ -27,7 +27,7 @@ const MainLayout = () => {
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 bg-[#121212] rounded-lg overflow-hidden relative flex flex-col">
+        <main className="flex-1 bg-[#121212] rounded-lg overflow-y-auto relative flex flex-col">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />

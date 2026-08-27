@@ -64,12 +64,12 @@ export const Sidebar = () => {
   const libraryItems = [
     { id: 1, title: 'Liked Songs', subtitle: 'Playlist • 130 songs', icon: 'heart', color: 'from-indigo-500 to-purple-500', pinned: true },
     { id: 2, title: 'Your Episodes', subtitle: 'Playlist • Saved & downloaded episodes', icon: 'bookmark', color: 'bg-[#006450]', pinned: true },
-    { id: 3, title: 'Forrest Frank', subtitle: 'Artist', image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=50&h=50&fit=crop', rounded: true },
-    { id: 4, title: 'Overwhelmed (Ryan Mack Remix)', subtitle: 'Playlist • mannie tech', image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=50&h=50&fit=crop' },
-    { id: 5, title: 'Pentatonix', subtitle: 'Artist', image: 'https://images.unsplash.com/photo-1493225457124-a1a2a5f5f92c?w=50&h=50&fit=crop', rounded: true },
-    { id: 6, title: 'Anne Wilson', subtitle: 'Artist', image: 'https://images.unsplash.com/photo-1516280440502-a1f945371a74?w=50&h=50&fit=crop', rounded: true },
-    { id: 7, title: 'Frozen - Let It Go', subtitle: 'Playlist • Roman', image: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=50&h=50&fit=crop' },
-    { id: 8, title: 'Samantha Ebert', subtitle: 'Artist', image: 'https://images.unsplash.com/photo-1520699049698-acd2fce18738?w=50&h=50&fit=crop', rounded: true },
+    { id: 3, title: 'Forrest Frank', subtitle: 'Artist', image: 'https://picsum.photos/seed/forrest/200', rounded: true },
+    { id: 4, title: 'Overwhelmed (Ryan Mack Remix)', subtitle: 'Playlist • mannie tech', image: 'https://picsum.photos/seed/overwhelmed/200' },
+    { id: 5, title: 'Pentatonix', subtitle: 'Artist', image: 'https://picsum.photos/seed/ptx/200', rounded: true },
+    { id: 6, title: 'Anne Wilson', subtitle: 'Artist', image: 'https://picsum.photos/seed/anne/200', rounded: true },
+    { id: 7, title: 'Frozen - Let It Go', subtitle: 'Playlist • Roman', image: 'https://picsum.photos/seed/frozen/200' },
+    { id: 8, title: 'Samantha Ebert', subtitle: 'Artist', image: 'https://picsum.photos/seed/samantha/200', rounded: true },
   ];
 
   return (
