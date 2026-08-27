@@ -207,3 +207,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: review z-index for hover states -->
 <!-- style: tweak play button translation on hover -->
 <!-- refactor: simplify flexbox properties in large cards -->
+<!-- chore: test image loading performance -->
