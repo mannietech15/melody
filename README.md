@@ -184,3 +184,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: validate image seed generation -->
 <!-- style: adjust spacing around filter chips -->
 <!-- docs: clarify responsive behavior constraints -->
+<!-- chore: review accessibility of image alts -->
