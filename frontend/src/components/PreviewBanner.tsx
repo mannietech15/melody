@@ -1,1 +1,1 @@
-export const PreviewBanner = () => { return null; };
+export const PreviewBanner = () => { return (<div></div>); };
