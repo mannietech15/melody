@@ -25,7 +25,7 @@ export const Footer = () => {
             <a href="#" className="text-melody-text hover:text-white hover:underline">Free Mobile App</a>
           </div>
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-white">Spotify Plans</h4>
+            <h4 className="font-bold text-white">Spotify Plans <!-- section --></h4>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Premium Individual</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Premium Duo</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Premium Family</a>
