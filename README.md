@@ -235,3 +235,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: polish overall dashboard layout -->
 <!-- style: refine layout of mixed format artists section -->
 <!-- refactor: modularize large card variants -->
+<!-- docs: document mock data for new artist rows -->
