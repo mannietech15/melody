@@ -47,7 +47,7 @@ export const Footer = () => {
         </div>
       </div>
       
-      <div className="pt-8 border-t border-white/10 flex justify-between items-center text-melody-text text-sm pb-8">
+      <div className="pt-8 border-t border-white/10 flex justify-between items-center text-melody-text text-[13px] pb-8">
         <div className="flex flex-wrap gap-4">
           <a href="#" className="hover:text-white">Legal</a>
           <a href="#" className="hover:text-white">Safety & Privacy Center</a>
