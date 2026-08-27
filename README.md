@@ -214,3 +214,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: adjust aspect ratios for station images -->
 <!-- refactor: consolidate shadow styles -->
 <!-- chore: audit console warnings for map keys -->
+<!-- style: smooth transition timings on new sections -->
