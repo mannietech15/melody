@@ -250,3 +250,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: adjust border radius on square playlists -->
 <!-- docs: clarify responsive stacking behavior -->
 <!-- chore: remove legacy styles from large cards -->
+<!-- style: tweak typography in custom 5 Minute AI card -->
