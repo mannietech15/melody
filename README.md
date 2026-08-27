@@ -273,3 +273,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: review structural integrity of horizontal scroll -->
 <!-- style: polish overall feed architecture -->
 <!-- style: adjust button positioning on podcast cards -->
+<!-- refactor: componentize play controls overlay -->
