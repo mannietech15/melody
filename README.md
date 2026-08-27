@@ -22,6 +22,10 @@
   </p>
 </div>
 
+<div align="center">
+  <img src="assets/dashboard.png" alt="Melody Dashboard Preview" width="800" />
+</div>
+
 ---
 
 ## 🚀 About Melody
