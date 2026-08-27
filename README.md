@@ -239,3 +239,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: optimize gradient blends in large cards -->
 <!-- style: adjust padding for circular artist images -->
 <!-- fix: ensure proper text truncation in mixed sections -->
+<!-- refactor: abstract album art styling -->
