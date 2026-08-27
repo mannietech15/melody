@@ -177,3 +177,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: simplify grid layout properties -->
 <!-- chore: update internal dependencies -->
 <!-- style: tweak hover states on playable cards -->
+<!-- docs: add comments to home component sections -->
