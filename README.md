@@ -200,3 +200,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: optimize station gradient overlays -->
 <!-- style: fine-tune radio badge positioning -->
 <!-- fix: ensure scrollbar remains hidden on new rows -->
+<!-- refactor: abstract common card styling -->
