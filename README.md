@@ -233,3 +233,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: abstract hardcoded strings in cards -->
 <!-- chore: review flex gap consistency -->
 <!-- style: polish overall dashboard layout -->
+<!-- style: refine layout of mixed format artists section -->
