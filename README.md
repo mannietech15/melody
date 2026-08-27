@@ -229,3 +229,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: adjust spacing around section headers -->
 <!-- docs: clarify z-index layering -->
 <!-- chore: finalize layout tweaks for new sections -->
+<!-- style: ensure consistent corner radius -->
