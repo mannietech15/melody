@@ -283,3 +283,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: fine-tune gap between preview icons -->
 <!-- docs: update documentation for custom player controls -->
 <!-- chore: review flex alignments in control bar -->
+<!-- style: enhance contrast on translucent buttons -->
