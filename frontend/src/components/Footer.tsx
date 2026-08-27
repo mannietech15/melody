@@ -56,7 +56,7 @@ export const Footer = () => {
           <a href="#" className="hover:text-white">About Ads</a>
           <a href="#" className="hover:text-white">Accessibility</a>
         </div>
-        <span>© 2026 Melody AB</span>
+        <span>© 2024 Melody AB</span>
       </div>
     </>
   );
