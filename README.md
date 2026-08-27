@@ -67,10 +67,8 @@ It features an intelligent 3-pane architecture, real-time synced lyrics, state-o
 
 ## 📸 Screenshots
 
-*(Add your screenshots here to show off the app! Replace these placeholders)*
-
 <div align="center">
-  <img src="https://via.placeholder.com/800x450/121212/1ed760?text=Dashboard+Screenshot" alt="Dashboard Preview" width="80%"/>
+  <img src="assets/dashboard.png" alt="Dashboard Preview" width="80%"/>
   <br/>
   <i>The main dashboard showcasing the player, right sidebar, and synced lyrics.</i>
 </div>
