@@ -264,3 +264,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: review accessibility of new SVG icons -->
 <!-- style: fine-tune hover overlay opacity -->
 <!-- refactor: modularize custom card rendering -->
+<!-- chore: optimize SVG icon sizes -->
