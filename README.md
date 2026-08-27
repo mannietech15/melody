@@ -222,3 +222,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: validate responsive breakpoints -->
 <!-- style: adjust padding in playlist section -->
 <!-- docs: document shadow utilities -->
+<!-- chore: review accessibility of new images -->
