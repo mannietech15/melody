@@ -11,7 +11,7 @@ export const Section: React.FC<SectionProps> = ({ title, isCircular = false }) =
   return (
     <div className="flex flex-col gap-4 mb-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-white hover:underline cursor-pointer tracking-tight">
+        <h2 className="text-[22px] font-bold text-white hover:underline cursor-pointer tracking-tight">
           {title}
         </h2>
         <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
