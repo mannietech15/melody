@@ -16,7 +16,7 @@ export const Section: React.FC<SectionProps> = ({ title, isCircular = false }) =
         </h2>
         <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
       </div>
-      <div className="flex gap-5 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <div className="flex gap-5 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {items.map((item) => (
           <div key={item} className="flex-none w-[180px] hover:bg-[#282828] p-4 rounded-lg transition-all cursor-pointer group relative">
             <div className="relative mb-4">
