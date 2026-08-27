@@ -102,235 +102,6 @@ export const Home = () => {
             })}
           </div>
 
-          {/* Getting started */}
-          <div className="flex flex-col gap-4 mt-2">
-            <div className="flex items-center justify-between">
-              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                Getting started
-              </h2>
-            </div>
-            
-            {/* The Getting started container has a left right arrows and a specific video UI in the screenshot */}
-            <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative">
-              <div className="flex-none w-full max-w-[500px] h-[220px] bg-gradient-to-br from-[#0e7490] to-[#083344] rounded-lg relative overflow-hidden group cursor-pointer flex">
-                <div className="flex-1 p-6 flex flex-col justify-center">
-                  <h3 className="text-[32px] font-black text-white leading-tight mb-2 tracking-tighter">3. Watch a video</h3>
-                  <p className="text-white/80 font-medium text-sm mb-6 max-w-[200px]">Play videos from your favorite artists and creators.</p>
-                  <div className="flex items-center gap-4">
-                    <button className="bg-[#1ed760] text-black font-bold text-[13px] px-4 py-2 rounded-full hover:scale-105 transition-transform">Browse videos</button>
-                    <button className="text-white font-bold text-[13px] hover:underline">Show more tips</button>
-                  </div>
-                </div>
-                <div className="w-[180px] h-full bg-[#083344] flex items-center justify-center shrink-0 border-l border-white/10 relative">
-                    <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center hover:scale-105 transition-transform">
-                      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                    </div>
-                </div>
-              </div>
-              
-              {/* Other sections visible in screenshot right next to getting started */}
-              <div className="flex-1 min-w-[400px]">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                    Pre-save upcoming releases
-                  </h2>
-                  <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
-                </div>
-                <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-                  {[
-                    { title: 'Damascus Road', subtitle: 'Josiah Queen', seed: 'damascus' },
-                    { title: 'Christmas in the City', subtitle: 'Pentatonix', seed: 'christmas' },
-                    { title: 'WILDCHILD', subtitle: 'Alex Warren', seed: 'wildchild' },
-                    { title: 'The Fall', subtitle: 'Bryce Vine', seed: 'fall' },
-                    { title: 'New Heights', subtitle: 'Jason Derulo', seed: 'heights' },
-                    { title: 'Lost Boy', subtitle: 'Ruth B.', seed: 'lost' },
-                    { title: 'Home', subtitle: 'Michael Bublé', seed: 'home' },
-                    { title: 'Yellow', subtitle: 'Coldplay', seed: 'yellow' },
-                  ].map((item, i) => (
-                    <div key={i} className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
-                      <div className="relative mb-4">
-                        <img src={`https://picsum.photos/seed/${item.seed}/200`} alt={item.title} className="w-full aspect-square object-cover rounded-md shadow-lg" />
-                        <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
-                          <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                        </button>
-                      </div>
-                      <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
-                      <p className="text-sm text-melody-text truncate">{item.subtitle}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Episodes you might like */}
-          <div className="flex flex-col gap-4 mt-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                Episodes you might like
-              </h2>
-              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
-            </div>
-            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {['Bloomberg Tech', 'Dolby ATMOS', 'FT News', '5', 'The Mindset', 'The Pragmatic Engineer', 'Tech News Briefing', 'Planet Money'].map((item, i) => (
-                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
-                  <div className="relative mb-4">
-                    <img 
-                      src={`https://picsum.photos/seed/podcast${i}/200`} 
-                      alt="Cover" 
-                      className="w-full aspect-square object-cover rounded-xl shadow-lg"
-                    />
-                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
-                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                    </button>
-                  </div>
-                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item}</h3>
-                  <p className="text-sm text-melody-text line-clamp-2">Podcast subtitle...</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Shows you might like */}
-          <div className="flex flex-col gap-4 mt-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                Shows you might like
-              </h2>
-              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
-            </div>
-            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {[
-                { title: 'Bloomberg News Now', subtitle: 'Bloomberg', seed: 'news' },
-                { title: 'Dolby Atmos', subtitle: 'NullPL', seed: 'dolby' },
-                { title: 'FT News Briefing', subtitle: 'Financial Times', seed: 'ft' },
-                { title: 'The Mindset Mentor', subtitle: 'Rob Dial', seed: 'mentor' },
-                { title: 'The Pragmatic Engineer', subtitle: 'Gergely Orosz', seed: 'pragmatic' },
-                { title: 'WSJ Tech News Briefing', subtitle: 'The Wall Street Journal', seed: 'wsj' },
-              ].map((item, i) => (
-                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
-                  <div className="relative mb-4">
-                    <img 
-                      src={`https://picsum.photos/seed/${item.seed}/200`} 
-                      alt="Cover" 
-                      className="w-full aspect-square object-cover rounded-xl shadow-lg"
-                    />
-                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
-                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                    </button>
-                  </div>
-                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
-                  <p className="text-sm text-melody-text line-clamp-2">{item.subtitle}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Recommended Stations */}
-          <div className="flex flex-col gap-4 mt-6">
-            <div className="flex flex-col gap-1">
-              <span className="text-[13px] text-melody-text font-medium">Non-stop music based on your favorite songs and artists.</span>
-              <div className="flex items-center justify-between">
-                <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                  Recommended Stations
-                </h2>
-                <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
-              </div>
-            </div>
-            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {[
-                { title: 'maryjo', subtitle: 'With Sofia Camara, Gigi...', color: 'bg-[#f0e335]', seed: 'maryjo' },
-                { title: 'HALLELUJAH', subtitle: 'With Forrest Frank...', color: 'bg-[#b685ff]', seed: 'halle' },
-                { title: 'Anne Wilson', subtitle: 'With Micah Tyler...', color: 'bg-[#df7bff]', seed: 'anne' },
-                { title: 'Lauren Daigle', subtitle: 'With Katy Nichole...', color: 'bg-[#ff5d8f]', seed: 'lauren' },
-                { title: 'Samantha Ebert', subtitle: 'With Amanda Nolan...', color: 'bg-[#b0c4de]', seed: 'sam' },
-                { title: 'Ruth B.', subtitle: 'With Alec Benjamin...', color: 'bg-[#93a8ff]', seed: 'ruth' },
-                { title: 'Duncan Laurence', subtitle: 'With Alec Benjamin...', color: 'bg-[#40e0d0]', seed: 'duncan' },
-              ].map((item, i) => (
-                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
-                  <div className={`relative mb-4 w-full aspect-square rounded-lg ${item.color} flex flex-col p-3 overflow-hidden shadow-lg`}>
-                    <div className="flex justify-between items-start z-10 relative">
-                      <img src="/logo.png" className="w-5 h-5 invert mix-blend-screen opacity-80" alt="logo" />
-                      <span className="text-black font-black text-[11px] tracking-widest">RADIO</span>
-                    </div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <img src={`https://picsum.photos/seed/${item.seed}/150`} className="w-[85%] h-[85%] rounded-full object-cover shadow-2xl" alt="artist" />
-                    </div>
-                    <div className="mt-auto z-10 relative">
-                      <h3 className="font-black text-black text-xl leading-tight truncate">{item.title}</h3>
-                    </div>
-                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612] z-20">
-                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                    </button>
-                  </div>
-                  <p className="text-sm text-melody-text line-clamp-2 mt-2">{item.subtitle}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Albums featuring songs you like */}
-          <div className="flex flex-col gap-4 mt-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                Albums featuring songs you like
-              </h2>
-              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
-            </div>
-            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {[
-                { title: 'CHILD OF GOD II', subtitle: 'Forrest Frank', seed: 'child2' },
-                { title: 'CHILD OF GOD', subtitle: 'Forrest Frank', seed: 'child1' },
-                { title: 'The Waiting', subtitle: 'Samantha Ebert', seed: 'waiting' },
-                { title: 'CRY', subtitle: 'Hulvey', seed: 'cry' },
-                { title: 'Mansion', subtitle: 'NF', seed: 'mansion2' },
-                { title: 'Curtain Call', subtitle: 'Eminem', seed: 'curtain2' },
-              ].map((item, i) => (
-                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
-                  <div className="relative mb-4">
-                    <img src={`https://picsum.photos/seed/${item.seed}/200`} alt="Cover" className="w-full aspect-square object-cover rounded-md shadow-lg" />
-                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
-                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                    </button>
-                  </div>
-                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
-                  <p className="text-sm text-melody-text line-clamp-1">{item.subtitle}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Your playlists */}
-          <div className="flex flex-col gap-4 mt-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                Your playlists
-              </h2>
-              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
-            </div>
-            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {[
-                { title: 'Dusty Bibles', subtitle: 'By mannie tech', seed: 'dusty1' },
-                { title: 'MannieTech', subtitle: 'my store for songs', seed: 'mannie' },
-                { title: 'My Playlist #4', subtitle: 'By mannie tech', seed: 'play4' },
-                { title: 'Overwhelmed (Ryan Mack)', subtitle: 'By mannie tech', seed: 'overwhelmed2' },
-                { title: 'Eternity', subtitle: 'By mannie tech', seed: 'eternity' },
-                { title: 'Dusty Bibles', subtitle: 'By mannie tech', seed: 'dusty2' },
-              ].map((item, i) => (
-                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
-                  <div className="relative mb-4">
-                    <img src={`https://picsum.photos/seed/${item.seed}/200`} alt="Cover" className="w-full aspect-square object-cover rounded-md shadow-lg" />
-                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
-                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                    </button>
-                  </div>
-                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
-                  <p className="text-sm text-melody-text line-clamp-1">{item.subtitle}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* More like Forrest Frank */}
           <div className="flex flex-col gap-4 mt-6">
             <div className="flex items-center justify-between">
@@ -675,6 +446,236 @@ export const Home = () => {
             </div>
           </div>
           
+
+          {/* Getting started */}
+          <div className="flex flex-col gap-4 mt-2">
+            <div className="flex items-center justify-between">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Getting started
+              </h2>
+            </div>
+            
+            {/* The Getting started container has a left right arrows and a specific video UI in the screenshot */}
+            <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative">
+              <div className="flex-none w-full max-w-[500px] h-[220px] bg-gradient-to-br from-[#0e7490] to-[#083344] rounded-lg relative overflow-hidden group cursor-pointer flex">
+                <div className="flex-1 p-6 flex flex-col justify-center">
+                  <h3 className="text-[32px] font-black text-white leading-tight mb-2 tracking-tighter">3. Watch a video</h3>
+                  <p className="text-white/80 font-medium text-sm mb-6 max-w-[200px]">Play videos from your favorite artists and creators.</p>
+                  <div className="flex items-center gap-4">
+                    <button className="bg-[#1ed760] text-black font-bold text-[13px] px-4 py-2 rounded-full hover:scale-105 transition-transform">Browse videos</button>
+                    <button className="text-white font-bold text-[13px] hover:underline">Show more tips</button>
+                  </div>
+                </div>
+                <div className="w-[180px] h-full bg-[#083344] flex items-center justify-center shrink-0 border-l border-white/10 relative">
+                    <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center hover:scale-105 transition-transform">
+                      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </div>
+                </div>
+              </div>
+              
+              {/* Other sections visible in screenshot right next to getting started */}
+              <div className="flex-1 min-w-[400px]">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                    Pre-save upcoming releases
+                  </h2>
+                  <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+                </div>
+                <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                  {[
+                    { title: 'Damascus Road', subtitle: 'Josiah Queen', seed: 'damascus' },
+                    { title: 'Christmas in the City', subtitle: 'Pentatonix', seed: 'christmas' },
+                    { title: 'WILDCHILD', subtitle: 'Alex Warren', seed: 'wildchild' },
+                    { title: 'The Fall', subtitle: 'Bryce Vine', seed: 'fall' },
+                    { title: 'New Heights', subtitle: 'Jason Derulo', seed: 'heights' },
+                    { title: 'Lost Boy', subtitle: 'Ruth B.', seed: 'lost' },
+                    { title: 'Home', subtitle: 'Michael Bublé', seed: 'home' },
+                    { title: 'Yellow', subtitle: 'Coldplay', seed: 'yellow' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
+                      <div className="relative mb-4">
+                        <img src={`https://picsum.photos/seed/${item.seed}/200`} alt={item.title} className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                        <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                          <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                        </button>
+                      </div>
+                      <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
+                      <p className="text-sm text-melody-text truncate">{item.subtitle}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Episodes you might like */}
+          <div className="flex flex-col gap-4 mt-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Episodes you might like
+              </h2>
+              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {['Bloomberg Tech', 'Dolby ATMOS', 'FT News', '5', 'The Mindset', 'The Pragmatic Engineer', 'Tech News Briefing', 'Planet Money'].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className="relative mb-4">
+                    <img 
+                      src={`https://picsum.photos/seed/podcast${i}/200`} 
+                      alt="Cover" 
+                      className="w-full aspect-square object-cover rounded-xl shadow-lg"
+                    />
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item}</h3>
+                  <p className="text-sm text-melody-text line-clamp-2">Podcast subtitle...</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Shows you might like */}
+          <div className="flex flex-col gap-4 mt-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Shows you might like
+              </h2>
+              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {[
+                { title: 'Bloomberg News Now', subtitle: 'Bloomberg', seed: 'news' },
+                { title: 'Dolby Atmos', subtitle: 'NullPL', seed: 'dolby' },
+                { title: 'FT News Briefing', subtitle: 'Financial Times', seed: 'ft' },
+                { title: 'The Mindset Mentor', subtitle: 'Rob Dial', seed: 'mentor' },
+                { title: 'The Pragmatic Engineer', subtitle: 'Gergely Orosz', seed: 'pragmatic' },
+                { title: 'WSJ Tech News Briefing', subtitle: 'The Wall Street Journal', seed: 'wsj' },
+              ].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className="relative mb-4">
+                    <img 
+                      src={`https://picsum.photos/seed/${item.seed}/200`} 
+                      alt="Cover" 
+                      className="w-full aspect-square object-cover rounded-xl shadow-lg"
+                    />
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
+                  <p className="text-sm text-melody-text line-clamp-2">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Recommended Stations */}
+          <div className="flex flex-col gap-4 mt-6">
+            <div className="flex flex-col gap-1">
+              <span className="text-[13px] text-melody-text font-medium">Non-stop music based on your favorite songs and artists.</span>
+              <div className="flex items-center justify-between">
+                <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                  Recommended Stations
+                </h2>
+                <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+              </div>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {[
+                { title: 'maryjo', subtitle: 'With Sofia Camara, Gigi...', color: 'bg-[#f0e335]', seed: 'maryjo' },
+                { title: 'HALLELUJAH', subtitle: 'With Forrest Frank...', color: 'bg-[#b685ff]', seed: 'halle' },
+                { title: 'Anne Wilson', subtitle: 'With Micah Tyler...', color: 'bg-[#df7bff]', seed: 'anne' },
+                { title: 'Lauren Daigle', subtitle: 'With Katy Nichole...', color: 'bg-[#ff5d8f]', seed: 'lauren' },
+                { title: 'Samantha Ebert', subtitle: 'With Amanda Nolan...', color: 'bg-[#b0c4de]', seed: 'sam' },
+                { title: 'Ruth B.', subtitle: 'With Alec Benjamin...', color: 'bg-[#93a8ff]', seed: 'ruth' },
+                { title: 'Duncan Laurence', subtitle: 'With Alec Benjamin...', color: 'bg-[#40e0d0]', seed: 'duncan' },
+              ].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className={`relative mb-4 w-full aspect-square rounded-lg ${item.color} flex flex-col p-3 overflow-hidden shadow-lg`}>
+                    <div className="flex justify-between items-start z-10 relative">
+                      <img src="/logo.png" className="w-5 h-5 invert mix-blend-screen opacity-80" alt="logo" />
+                      <span className="text-black font-black text-[11px] tracking-widest">RADIO</span>
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img src={`https://picsum.photos/seed/${item.seed}/150`} className="w-[85%] h-[85%] rounded-full object-cover shadow-2xl" alt="artist" />
+                    </div>
+                    <div className="mt-auto z-10 relative">
+                      <h3 className="font-black text-black text-xl leading-tight truncate">{item.title}</h3>
+                    </div>
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612] z-20">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <p className="text-sm text-melody-text line-clamp-2 mt-2">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Albums featuring songs you like */}
+          <div className="flex flex-col gap-4 mt-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Albums featuring songs you like
+              </h2>
+              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {[
+                { title: 'CHILD OF GOD II', subtitle: 'Forrest Frank', seed: 'child2' },
+                { title: 'CHILD OF GOD', subtitle: 'Forrest Frank', seed: 'child1' },
+                { title: 'The Waiting', subtitle: 'Samantha Ebert', seed: 'waiting' },
+                { title: 'CRY', subtitle: 'Hulvey', seed: 'cry' },
+                { title: 'Mansion', subtitle: 'NF', seed: 'mansion2' },
+                { title: 'Curtain Call', subtitle: 'Eminem', seed: 'curtain2' },
+              ].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className="relative mb-4">
+                    <img src={`https://picsum.photos/seed/${item.seed}/200`} alt="Cover" className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
+                  <p className="text-sm text-melody-text line-clamp-1">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Your playlists */}
+          <div className="flex flex-col gap-4 mt-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Your playlists
+              </h2>
+              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {[
+                { title: 'Dusty Bibles', subtitle: 'By mannie tech', seed: 'dusty1' },
+                { title: 'MannieTech', subtitle: 'my store for songs', seed: 'mannie' },
+                { title: 'My Playlist #4', subtitle: 'By mannie tech', seed: 'play4' },
+                { title: 'Overwhelmed (Ryan Mack)', subtitle: 'By mannie tech', seed: 'overwhelmed2' },
+                { title: 'Eternity', subtitle: 'By mannie tech', seed: 'eternity' },
+                { title: 'Dusty Bibles', subtitle: 'By mannie tech', seed: 'dusty2' },
+              ].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className="relative mb-4">
+                    <img src={`https://picsum.photos/seed/${item.seed}/200`} alt="Cover" className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
+                  <p className="text-sm text-melody-text line-clamp-1">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="h-10"></div>
           
         </>
