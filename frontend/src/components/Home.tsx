@@ -18,7 +18,7 @@ export const Home = () => {
         playSong(song);
       }
   return (
-    <div className={`flex flex-col gap-8 pb-20 mt-4 relative z-10 ${!user ? 'px-2' : ''}`}>
+    <div className={`flex flex-col gap-8 pb-20 mt-4 relative z-10 ${!user ? 'px-4' : ''}`}>
       
       {!user ? (
         <>
