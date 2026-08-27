@@ -265,3 +265,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: fine-tune hover overlay opacity -->
 <!-- refactor: modularize custom card rendering -->
 <!-- chore: optimize SVG icon sizes -->
+<!-- style: adjust typography weights in section headers -->
