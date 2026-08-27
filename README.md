@@ -183,3 +183,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: modularize episode list rendering -->
 <!-- chore: validate image seed generation -->
 <!-- style: adjust spacing around filter chips -->
+<!-- docs: clarify responsive behavior constraints -->
