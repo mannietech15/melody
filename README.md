@@ -247,3 +247,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: enhance contrast on custom album cards -->
 <!-- refactor: simplify container structures in new rows -->
 <!-- chore: validate image aspect ratios across cards -->
+<!-- style: adjust border radius on square playlists -->
