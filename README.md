@@ -253,3 +253,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: tweak typography in custom 5 Minute AI card -->
 <!-- refactor: consolidate shadow variables -->
 <!-- chore: audit console warnings for missing keys -->
+<!-- style: smooth transitions in newly added rows -->
