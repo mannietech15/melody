@@ -35,7 +35,7 @@ export const Footer = () => {
         </div>
         
         <div className="flex gap-4 h-fit">
-          <button className="w-10 h-10 bg-[#292929] hover:bg-[#727272] rounded-full flex items-center justify-center text-white transition-colors">
+          <button className="w-10 h-10 bg-[#292929] hover:bg-[#727272] transition-colors hover:bg-[#727272] rounded-full flex items-center justify-center text-white transition-colors">
             <Instagram size={20} />
           </button>
           <button className="w-10 h-10 bg-[#292929] hover:bg-[#727272] rounded-full flex items-center justify-center text-white transition-colors">
