@@ -12,7 +12,7 @@ export const Footer = () => {
             <a href="#" className="text-melody-text hover:text-white hover:underline">For the Record</a>
           </div>
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-white">Communities</h4>
+            <h4 className="font-bold text-white">Communities <!-- section --></h4>
             <a href="#" className="text-melody-text hover:text-white hover:underline">For Artists</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Developers</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Advertising</a>
