@@ -170,3 +170,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: optimize image loading performance -->
 <!-- style: refine border radiuses across containers -->
 <!-- refactor: clean up unused variables in layout -->
+<!-- docs: update image source documentation -->
