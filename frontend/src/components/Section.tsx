@@ -6,7 +6,7 @@ interface SectionProps {
 }
 
 export const Section: React.FC<SectionProps> = ({ title, isCircular = false }) => {
-  const items = [1, 2, 3, 4, 5, 6];
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
     <div className="flex flex-col gap-4 mb-8">
