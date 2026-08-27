@@ -7,11 +7,15 @@ import { Home } from './components/Home';
 import { Search } from './components/Search';
 import { Player } from './components/Player';
 import { RightSidebar } from './components/RightSidebar';
+import { PreviewBanner } from './components/PreviewBanner';
+import { useAuth } from './context/AuthContext';
 import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
 import './App.css';
 
 const MainLayout = () => {
+  const { user } = useAuth();
+  
   return (
     <div className="h-screen flex flex-col bg-black text-melody-text p-2 pb-0 gap-2 font-sans">
       {/* Top section: Sidebar + Main Content + RightSidebar */}
@@ -31,14 +35,15 @@ const MainLayout = () => {
           </div>
         </main>
         
-        
-        <div className="hidden lg:flex">
-          <RightSidebar />
-        </div>
+        {user && (
+          <div className="hidden lg:flex">
+            <RightSidebar />
+          </div>
+        )}
       </div>
 
-      {/* Bottom section: Now Playing Bar */}
-      <Player />
+      {/* Bottom section: Now Playing Bar or Preview Banner */}
+      {user ? <Player /> : <PreviewBanner />}
     </div>
   );
 };
