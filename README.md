@@ -178,3 +178,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: update internal dependencies -->
 <!-- style: tweak hover states on playable cards -->
 <!-- docs: add comments to home component sections -->
+<!-- chore: remove legacy mock data -->
