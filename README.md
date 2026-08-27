@@ -168,3 +168,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- update 18 -->
 <!-- update 19 -->
 <!-- chore: optimize image loading performance -->
+<!-- style: refine border radiuses across containers -->
