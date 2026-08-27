@@ -191,3 +191,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: smooth transition timings on hover -->
 <!-- docs: document new gradient background -->
 <!-- chore: audit console warnings -->
+<!-- style: optimize scrollbar hiding css -->
