@@ -270,3 +270,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: finalize structural layout for beta preview -->
 <!-- style: ensure consistent gap spacing throughout -->
 <!-- refactor: abstract static labels in custom cards -->
+<!-- chore: review structural integrity of horizontal scroll -->
