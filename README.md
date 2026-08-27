@@ -237,3 +237,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: modularize large card variants -->
 <!-- docs: document mock data for new artist rows -->
 <!-- chore: optimize gradient blends in large cards -->
+<!-- style: adjust padding for circular artist images -->
