@@ -191,6 +191,211 @@ export const Home = () => {
             </div>
           </div>
           
+          {/* Shows you might like */}
+          <div className="flex flex-col gap-4 mt-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Shows you might like
+              </h2>
+              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {[
+                { title: 'Bloomberg News Now', subtitle: 'Bloomberg', seed: 'news' },
+                { title: 'Dolby Atmos', subtitle: 'NullPL', seed: 'dolby' },
+                { title: 'FT News Briefing', subtitle: 'Financial Times', seed: 'ft' },
+                { title: 'The Mindset Mentor', subtitle: 'Rob Dial', seed: 'mentor' },
+                { title: 'The Pragmatic Engineer', subtitle: 'Gergely Orosz', seed: 'pragmatic' },
+                { title: 'WSJ Tech News Briefing', subtitle: 'The Wall Street Journal', seed: 'wsj' },
+              ].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className="relative mb-4">
+                    <img 
+                      src={`https://picsum.photos/seed/${item.seed}/200`} 
+                      alt="Cover" 
+                      className="w-full aspect-square object-cover rounded-xl shadow-lg"
+                    />
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
+                  <p className="text-sm text-melody-text line-clamp-2">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Recommended Stations */}
+          <div className="flex flex-col gap-4 mt-6">
+            <div className="flex flex-col gap-1">
+              <span className="text-[13px] text-melody-text font-medium">Non-stop music based on your favorite songs and artists.</span>
+              <div className="flex items-center justify-between">
+                <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                  Recommended Stations
+                </h2>
+                <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+              </div>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {[
+                { title: 'maryjo', subtitle: 'With Sofia Camara, Gigi...', color: 'bg-[#f0e335]', seed: 'maryjo' },
+                { title: 'HALLELUJAH', subtitle: 'With Forrest Frank...', color: 'bg-[#b685ff]', seed: 'halle' },
+                { title: 'Anne Wilson', subtitle: 'With Micah Tyler...', color: 'bg-[#df7bff]', seed: 'anne' },
+                { title: 'Lauren Daigle', subtitle: 'With Katy Nichole...', color: 'bg-[#ff5d8f]', seed: 'lauren' },
+                { title: 'Samantha Ebert', subtitle: 'With Amanda Nolan...', color: 'bg-[#b0c4de]', seed: 'sam' },
+                { title: 'Ruth B.', subtitle: 'With Alec Benjamin...', color: 'bg-[#93a8ff]', seed: 'ruth' },
+                { title: 'Duncan Laurence', subtitle: 'With Alec Benjamin...', color: 'bg-[#40e0d0]', seed: 'duncan' },
+              ].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className={`relative mb-4 w-full aspect-square rounded-lg ${item.color} flex flex-col p-3 overflow-hidden shadow-lg`}>
+                    <div className="flex justify-between items-start z-10 relative">
+                      <img src="/logo.png" className="w-5 h-5 invert mix-blend-screen opacity-80" alt="logo" />
+                      <span className="text-black font-black text-[11px] tracking-widest">RADIO</span>
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img src={`https://picsum.photos/seed/${item.seed}/150`} className="w-[85%] h-[85%] rounded-full object-cover shadow-2xl" alt="artist" />
+                    </div>
+                    <div className="mt-auto z-10 relative">
+                      <h3 className="font-black text-black text-xl leading-tight truncate">{item.title}</h3>
+                    </div>
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612] z-20">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <p className="text-sm text-melody-text line-clamp-2 mt-2">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Albums featuring songs you like */}
+          <div className="flex flex-col gap-4 mt-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Albums featuring songs you like
+              </h2>
+              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {[
+                { title: 'CHILD OF GOD II', subtitle: 'Forrest Frank', seed: 'child2' },
+                { title: 'CHILD OF GOD', subtitle: 'Forrest Frank', seed: 'child1' },
+                { title: 'The Waiting', subtitle: 'Samantha Ebert', seed: 'waiting' },
+                { title: 'CRY', subtitle: 'Hulvey', seed: 'cry' },
+                { title: 'Mansion', subtitle: 'NF', seed: 'mansion2' },
+                { title: 'Curtain Call', subtitle: 'Eminem', seed: 'curtain2' },
+              ].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className="relative mb-4">
+                    <img src={`https://picsum.photos/seed/${item.seed}/200`} alt="Cover" className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
+                  <p className="text-sm text-melody-text line-clamp-1">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Your playlists */}
+          <div className="flex flex-col gap-4 mt-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Your playlists
+              </h2>
+              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+            </div>
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {[
+                { title: 'Dusty Bibles', subtitle: 'By mannie tech', seed: 'dusty1' },
+                { title: 'MannieTech', subtitle: 'my store for songs', seed: 'mannie' },
+                { title: 'My Playlist #4', subtitle: 'By mannie tech', seed: 'play4' },
+                { title: 'Overwhelmed (Ryan Mack)', subtitle: 'By mannie tech', seed: 'overwhelmed2' },
+                { title: 'Eternity', subtitle: 'By mannie tech', seed: 'eternity' },
+                { title: 'Dusty Bibles', subtitle: 'By mannie tech', seed: 'dusty2' },
+              ].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+                  <div className="relative mb-4">
+                    <img src={`https://picsum.photos/seed/${item.seed}/200`} alt="Cover" className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                    <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
+                  <p className="text-sm text-melody-text line-clamp-1">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Large Cards Row */}
+          <div className="flex gap-6 mt-8 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {/* Card 1 */}
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">For fans of Forrest Frank</span>
+              <div className="h-[280px] rounded-lg bg-gradient-to-br from-[#c8785e] to-[#2c1a14] p-5 relative overflow-hidden group cursor-pointer shadow-lg">
+                <div className="flex gap-4 relative z-10">
+                  <img src="https://picsum.photos/seed/forrestradio/100" className="w-20 h-20 shadow-xl rounded-md" alt="Forrest" />
+                  <div className="flex flex-col">
+                    <span className="text-white text-sm font-bold bg-black/20 w-fit px-2 py-0.5 rounded-sm mb-1">RADIO</span>
+                    <h3 className="text-white font-black text-2xl leading-tight">Forrest<br/>Frank Radio</h3>
+                    <span className="text-white/80 text-sm mt-1">Playlist • Spotify</span>
+                  </div>
+                </div>
+                <div className="absolute bottom-5 left-5 right-5 text-white/80 text-sm font-medium line-clamp-2 z-10">
+                  With Josiah Queen, I OST & FOUND, Jordan Feliz and more
+                </div>
+                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612] z-20">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                </button>
+              </div>
+            </div>
+            
+            {/* Card 2 */}
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">New episode from [0]</span>
+              <div className="h-[280px] rounded-lg bg-[#0f713c] p-5 relative overflow-hidden group cursor-pointer shadow-lg flex flex-col justify-between">
+                <div className="flex flex-col relative z-10">
+                  <h3 className="text-white font-black text-[22px] leading-tight line-clamp-2 mb-1">Nvidia's Big Test as AI Chip Race Heats Up</h3>
+                  <span className="text-white/80 text-sm font-medium">Episode • Bloomberg Tech</span>
+                </div>
+                <div className="flex justify-center my-2 relative z-10">
+                  <img src="https://picsum.photos/seed/bloomberg/150" className="w-32 h-32 rounded-xl shadow-2xl" alt="Bloomberg" />
+                </div>
+                <div className="text-white/80 text-[13px] font-medium line-clamp-2 z-10 mt-auto">
+                  Aug 25 • 44 min 15 sec • Bloomberg's Ed Ludlow breaks down what to expect...
+                </div>
+                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 z-20">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">For fans of Josiah Queen</span>
+              <div className="h-[280px] rounded-lg bg-gradient-to-br from-[#cbb15b] to-[#2c2612] p-5 relative overflow-hidden group cursor-pointer shadow-lg">
+                <div className="flex gap-4 relative z-10">
+                  <img src="https://picsum.photos/seed/josiahradio/100" className="w-20 h-20 shadow-xl rounded-md" alt="Josiah" />
+                  <div className="flex flex-col">
+                    <span className="text-white text-sm font-bold bg-black/20 w-fit px-2 py-0.5 rounded-sm mb-1">RADIO</span>
+                    <h3 className="text-white font-black text-2xl leading-tight">Josiah<br/>Queen Radio</h3>
+                    <span className="text-white/80 text-sm mt-1">Playlist • Spotify</span>
+                  </div>
+                </div>
+                <div className="absolute bottom-5 left-5 right-5 text-white/80 text-sm font-medium line-clamp-2 z-10">
+                  With I OST & FOUND, ELEVATION RHYTHM, Colton Dixon and more
+                </div>
+                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612] z-20">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          
           <div className="h-10"></div>
           
         </>
