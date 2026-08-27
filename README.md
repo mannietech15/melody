@@ -172,3 +172,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: clean up unused variables in layout -->
 <!-- docs: update image source documentation -->
 <!-- chore: prepare assets for production build -->
+<!-- style: adjust padding in sidebar components -->
