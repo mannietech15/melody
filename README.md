@@ -188,3 +188,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: fine-tune typography in sidebar -->
 <!-- refactor: consolidate flexbox classes -->
 <!-- chore: prep for upcoming feature toggle -->
+<!-- style: smooth transition timings on hover -->
