@@ -263,3 +263,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- docs: add comments to mock data arrays -->
 <!-- chore: review accessibility of new SVG icons -->
 <!-- style: fine-tune hover overlay opacity -->
+<!-- refactor: modularize custom card rendering -->
