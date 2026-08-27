@@ -254,3 +254,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: consolidate shadow variables -->
 <!-- chore: audit console warnings for missing keys -->
 <!-- style: smooth transitions in newly added rows -->
+<!-- docs: document absolute positioning in custom cards -->
