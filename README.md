@@ -185,3 +185,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: adjust spacing around filter chips -->
 <!-- docs: clarify responsive behavior constraints -->
 <!-- chore: review accessibility of image alts -->
+<!-- style: fine-tune typography in sidebar -->
