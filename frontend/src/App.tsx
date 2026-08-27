@@ -17,22 +17,21 @@ const MainLayout = () => {
   const { user } = useAuth();
   
   return (
-    <div className="h-screen flex flex-col bg-black text-melody-text p-2 pb-0 gap-2 font-sans">
-      {/* Top section: Sidebar + Main Content + RightSidebar */}
-      <div className="flex-1 flex overflow-hidden gap-2 h-[calc(100vh-80px-16px)]">
+    <div className="h-screen flex flex-col bg-black text-melody-text p-2 gap-2 font-sans overflow-hidden">
+      <Topbar />
+
+      {/* Middle section: Sidebar + Main Content + RightSidebar */}
+      <div className="flex-1 flex overflow-hidden gap-2">
         <div className="hidden md:flex">
           <Sidebar />
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 bg-[#121212] rounded-lg overflow-y-auto relative flex flex-col">
-          <Topbar />
-          <div className="flex-1 overflow-y-auto px-4">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/search" element={<Search />} />
-            </Routes>
-          </div>
+        <main className="flex-1 bg-[#121212] rounded-lg overflow-hidden relative flex flex-col">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
         </main>
         
         {user && (

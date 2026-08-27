@@ -20,8 +20,19 @@ export const Home = () => {
     }
   };
 
+  const topGridItems = [
+    { title: 'Liked Songs', image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=64&h=64&fit=crop', isLiked: true },
+    { title: 'Forrest Frank', image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=64&h=64&fit=crop' },
+    { title: 'Sad times', image: 'https://images.unsplash.com/photo-1493225457124-a1a2a5f5f92c?w=64&h=64&fit=crop' },
+    { title: 'Human Being Not Human Race', image: 'https://images.unsplash.com/photo-1516280440502-a1f945371a74?w=64&h=64&fit=crop' },
+    { title: 'Curtain Call: The Hits (Deluxe Edition)', image: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=64&h=64&fit=crop' },
+    { title: 'Mansion', image: 'https://images.unsplash.com/photo-1520699049698-acd2fce18738?w=64&h=64&fit=crop' },
+    { title: 'Meta Agrees to Change Its Ways, But...', image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=64&h=64&fit=crop', hasDot: true },
+    { title: 'Frozen - Let It Go', image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=64&h=64&fit=crop' },
+  ];
+
   return (
-    <div className={`flex flex-col gap-8 pb-20 mt-4 relative z-10 ${!user ? 'px-4' : ''}`}>
+    <div className={`flex flex-col gap-8 pb-20 relative z-10 min-h-full ${!user ? 'px-4 mt-4' : 'px-6 pt-16 bg-gradient-to-b from-[#2e0964] via-[#121212] to-[#121212] bg-[length:100%_300px] bg-no-repeat'}`}>
       
       {!user ? (
         <>
@@ -36,157 +47,158 @@ export const Home = () => {
         </>
       ) : (
         <>
-          {/* Filter Chips */}
-          <div className="flex gap-2">
+          {/* Filter Chips - Positioned Absolute or sticky at the very top */}
+          <div className="absolute top-4 left-6 flex gap-2 z-20">
             <button className="bg-white text-black font-medium text-sm px-4 py-1.5 rounded-full hover:scale-105 transition-transform">
               All
             </button>
-            <button className="bg-[#242424] hover:bg-[#2a2a2a] text-white font-medium text-sm px-4 py-1.5 rounded-full transition-colors">
+            <button className="bg-white/10 hover:bg-white/20 text-white font-medium text-sm px-4 py-1.5 rounded-full transition-colors">
               Music
             </button>
-            <button className="bg-[#242424] hover:bg-[#2a2a2a] text-white font-medium text-sm px-4 py-1.5 rounded-full transition-colors">
+            <button className="bg-white/10 hover:bg-white/20 text-white font-medium text-sm px-4 py-1.5 rounded-full transition-colors">
               Podcasts
             </button>
           </div>
 
           {/* Recently Played Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-            {songs.map((song) => {
-              const isThisPlaying = currentSong?.id === song.id && isPlaying;
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {topGridItems.map((item, index) => {
+              // using mock song matching for playability if needed, or just standard play button
+              const mockSongId = (index + 1).toString();
+              const isThisPlaying = currentSong?.id === mockSongId && isPlaying;
               return (
                 <div 
-                  key={song.id} 
-                  className="group bg-white/5 hover:bg-white/20 transition-all rounded-md flex items-center cursor-pointer overflow-hidden h-16 relative"
-                  onClick={() => playSong(song)}
+                  key={index} 
+                  className="group bg-white/10 hover:bg-white/20 transition-all rounded-md flex items-center cursor-pointer overflow-hidden h-16 relative"
                 >
-                  <img src={song.coverUrl} alt={song.title} className="w-16 h-16 shadow-[0_8px_24px_rgba(0,0,0,0.5)]" />
-                  <div className="flex-1 font-bold text-white px-4 line-clamp-1">{song.title}</div>
+                  {item.isLiked ? (
+                    <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shrink-0 shadow-[0_8px_24px_rgba(0,0,0,0.5)]">
+                      <svg viewBox="0 0 16 16" className="w-6 h-6 fill-white"><path d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-1.15-1.464l-.004-.01L.69 8.31a4.542 4.542 0 01-1.01-3.84A4.618 4.618 0 011.69 2z"/></svg>
+                    </div>
+                  ) : (
+                    <img src={item.image} alt={item.title} className="w-16 h-16 object-cover shadow-[0_8px_24px_rgba(0,0,0,0.5)] shrink-0" />
+                  )}
+                  
+                  <div className="flex-1 font-bold text-white px-4 text-[15px] leading-tight line-clamp-2 pr-14 relative flex items-center">
+                    {item.title}
+                    {item.hasDot && (
+                      <div className="w-2 h-2 bg-[#3d91f4] rounded-full absolute right-6"></div>
+                    )}
+                  </div>
+                  
                   <button 
-                    className={`absolute right-4 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center shadow-xl hover:scale-105 hover:bg-[#f40612] transition-all
-                      ${isThisPlaying ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'}`}
-                    onClick={(e) => handlePlay(song.id, e)}
+                    className={`absolute right-3 h-11 w-11 bg-melody-red rounded-full flex items-center justify-center shadow-xl hover:scale-105 hover:bg-[#f40612] transition-all
+                      ${isThisPlaying ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                    onClick={(e) => handlePlay(mockSongId, e)}
                   >
                     {isThisPlaying ? (
                       <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black"><path d="M5.7 3a.7.7 0 00-.7.7v16.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V3.7a.7.7 0 00-.7-.7H5.7zm10 0a.7.7 0 00-.7.7v16.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V3.7a.7.7 0 00-.7-.7h-2.6z"></path></svg>
                     ) : (
-                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
                     )}
                   </button>
                 </div>
               );
             })}
-            {/* Fill the rest of the grid with placeholders */}
-            {items.slice(0, 4).map(item => (
-              <div key={`placeholder-${item}`} className="group bg-white/5 hover:bg-white/20 transition-all rounded-md flex items-center cursor-pointer overflow-hidden h-16 relative">
-                <img src={`https://picsum.photos/seed/recent${item}/64/64`} alt="Playlist" className="w-16 h-16 shadow-[0_8px_24px_rgba(0,0,0,0.5)]" />
-                <div className="flex-1 font-bold text-white px-4 line-clamp-1">Playlist {item}</div>
-              </div>
-            ))}
           </div>
 
           {/* Getting started */}
-          <div className="flex flex-col gap-4 mt-6">
+          <div className="flex flex-col gap-4 mt-2">
             <div className="flex items-center justify-between">
-              <h2 className="text-[22px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
                 Getting started
               </h2>
-              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
             </div>
-            <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              <div className="flex-none w-[340px] bg-gradient-to-br from-[#0e7490] to-[#083344] p-6 rounded-lg relative overflow-hidden group cursor-pointer">
-                <div className="relative z-10 flex flex-col justify-between h-[180px]">
-                  <div>
-                    <h3 className="text-[40px] font-black text-white leading-tight mb-2 tracking-tighter">3. Watch a video</h3>
-                    <p className="text-white/80 font-medium">Play videos from your favorite artists and creators.</p>
-                  </div>
+            
+            {/* The Getting started container has a left right arrows and a specific video UI in the screenshot */}
+            <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative">
+              <div className="flex-none w-full max-w-[500px] h-[220px] bg-gradient-to-br from-[#0e7490] to-[#083344] rounded-lg relative overflow-hidden group cursor-pointer flex">
+                <div className="flex-1 p-6 flex flex-col justify-center">
+                  <h3 className="text-[32px] font-black text-white leading-tight mb-2 tracking-tighter">3. Watch a video</h3>
+                  <p className="text-white/80 font-medium text-sm mb-6 max-w-[200px]">Play videos from your favorite artists and creators.</p>
                   <div className="flex items-center gap-4">
-                    <button className="bg-melody-red text-black font-bold text-sm px-4 py-2 rounded-full hover:scale-105 transition-transform">Browse videos</button>
-                    <button className="text-white font-bold text-sm hover:underline">Show more tips</button>
+                    <button className="bg-[#1ed760] text-black font-bold text-[13px] px-4 py-2 rounded-full hover:scale-105 transition-transform">Browse videos</button>
+                    <button className="text-white font-bold text-[13px] hover:underline">Show more tips</button>
                   </div>
+                </div>
+                <div className="w-[180px] h-full bg-[#083344] flex items-center justify-center shrink-0 border-l border-white/10 relative">
+                    <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center hover:scale-105 transition-transform">
+                      <svg viewBox="0 0 24 24" className="w-8 h-8 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </div>
                 </div>
               </div>
               
-              <div className="flex-none w-[340px] bg-gradient-to-br from-[#5b21b6] to-[#2e1065] p-6 rounded-lg relative overflow-hidden group cursor-pointer">
-                <div className="relative z-10 flex flex-col justify-between h-[180px]">
-                  <div>
-                    <h3 className="text-[40px] font-black text-white leading-tight mb-2 tracking-tighter">Follow friends</h3>
-                    <p className="text-white/80 font-medium">See what they're listening to in the Friend Activity tab.</p>
+              {/* Other sections visible in screenshot right next to getting started */}
+              <div className="flex-1 min-w-[400px]">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                    Pre-save upcoming releases
+                  </h2>
+                  <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
+                    <div className="relative mb-4">
+                      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&h=200&fit=crop" alt="Damascus Road" className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                    </div>
+                    <h3 className="font-bold text-white mb-1 truncate text-[15px]">Damascus Road</h3>
+                    <p className="text-sm text-melody-text truncate">Josiah Queen</p>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <button className="bg-melody-red text-black font-bold text-sm px-4 py-2 rounded-full hover:scale-105 transition-transform">Find friends</button>
+                  <div className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
+                    <div className="relative mb-4">
+                      <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5f5f92c?w=200&h=200&fit=crop" alt="Christmas in the City" className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                    </div>
+                    <h3 className="font-bold text-white mb-1 truncate text-[15px]">Christmas in the City</h3>
+                    <p className="text-sm text-melody-text truncate">Pentatonix</p>
+                  </div>
+                  <div className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
+                    <div className="relative mb-4">
+                      <img src="https://images.unsplash.com/photo-1516280440502-a1f945371a74?w=200&h=200&fit=crop" alt="WILDCHILD" className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                      <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                        <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                      </button>
+                    </div>
+                    <h3 className="font-bold text-white mb-1 truncate text-[15px]">WILDCHILD</h3>
+                    <p className="text-sm text-melody-text truncate">Alex Warren</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Pre-save upcoming releases */}
-          <div className="flex flex-col gap-4">
+          {/* Episodes you might like */}
+          <div className="flex flex-col gap-4 mt-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-[22px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                Pre-save upcoming releases
+              <h2 className="text-[24px] font-bold text-white hover:underline cursor-pointer tracking-tight">
+                Episodes you might like
               </h2>
               <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
             </div>
-            <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {items.map((item) => (
-                <div key={item} className="flex-none w-[160px] xl:w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
+            <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {['Bloomberg Tech', 'Dolby ATMOS', 'FT News', '5', 'The Mindset', 'The Pragmatic Engineer', 'Tech News Briefing'].map((item, i) => (
+                <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
                   <div className="relative mb-4">
                     <img 
-                      src={`https://picsum.photos/seed/presave${item}/200/200`} 
+                      src={`https://images.unsplash.com/photo-${1500000000000 + i}?w=200&h=200&fit=crop`} 
                       alt="Cover" 
-                      className="w-full aspect-square object-cover rounded-md shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
-                    />
-                  </div>
-                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">Release {item}</h3>
-                  <p className="text-sm text-melody-text line-clamp-2">Artist Name</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Made For User */}
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-[22px] font-bold text-white hover:underline cursor-pointer tracking-tight">
-                Made For you
-              </h2>
-              <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
-            </div>
-            <div className="flex gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {items.map((item) => (
-                <div key={item} className="flex-none w-[160px] xl:w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
-                  <div className="relative mb-4">
-                    <img 
-                      src={`https://picsum.photos/seed/mix${item}/200/200`} 
-                      alt="Cover" 
-                      className="w-full aspect-square object-cover rounded-md shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+                      className="w-full aspect-square object-cover rounded-xl shadow-lg"
                     />
                     <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
-                      <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24" fill="black">
-                        <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path>
-                      </svg>
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
                     </button>
                   </div>
-                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">Daily Mix {item}</h3>
-                  <p className="text-sm text-melody-text line-clamp-2">Mix of artists {item}</p>
+                  <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item}</h3>
+                  <p className="text-sm text-melody-text line-clamp-2">Podcast subtitle...</p>
                 </div>
               ))}
             </div>
           </div>
+          
+          <div className="h-10"></div>
+          
         </>
       )}
 
     </div>
   );
 };
-// update 0
-// update 1
-// update 2
-// update 3
-// update 4
-// update 5
-// update 6
-// update 7
-// update 8
-// update 9
