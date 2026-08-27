@@ -227,3 +227,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: modularize station rendering -->
 <!-- chore: optimize SVG play button icons -->
 <!-- style: adjust spacing around section headers -->
+<!-- docs: clarify z-index layering -->
