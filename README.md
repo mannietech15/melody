@@ -292,3 +292,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: tweak typography in custom 5 Minute AI card -->
 <!-- refactor: consolidate shadow variables for buttons -->
 <!-- chore: audit console warnings for SVG icons -->
+<!-- style: smooth transitions in newly added controls -->
