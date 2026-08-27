@@ -190,3 +190,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: prep for upcoming feature toggle -->
 <!-- style: smooth transition timings on hover -->
 <!-- docs: document new gradient background -->
+<!-- chore: audit console warnings -->
