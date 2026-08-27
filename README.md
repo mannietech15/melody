@@ -209,3 +209,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: simplify flexbox properties in large cards -->
 <!-- chore: test image loading performance -->
 <!-- style: enhance contrast of radio badge text -->
+<!-- docs: clarify responsive behavior of large cards -->
