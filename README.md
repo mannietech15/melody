@@ -232,3 +232,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: ensure consistent corner radius -->
 <!-- refactor: abstract hardcoded strings in cards -->
 <!-- chore: review flex gap consistency -->
+<!-- style: polish overall dashboard layout -->
