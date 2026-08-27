@@ -260,3 +260,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: clean up unused gradient classes -->
 <!-- chore: validate breakpoints for large cards -->
 <!-- style: adjust margins in circular artist row -->
+<!-- docs: add comments to mock data arrays -->
