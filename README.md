@@ -241,3 +241,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- fix: ensure proper text truncation in mixed sections -->
 <!-- refactor: abstract album art styling -->
 <!-- chore: test seeded image reliability for new rows -->
+<!-- style: fine-tune play button hover effects -->
