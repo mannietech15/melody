@@ -231,3 +231,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: finalize layout tweaks for new sections -->
 <!-- style: ensure consistent corner radius -->
 <!-- refactor: abstract hardcoded strings in cards -->
+<!-- chore: review flex gap consistency -->
