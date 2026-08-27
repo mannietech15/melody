@@ -275,3 +275,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: adjust button positioning on podcast cards -->
 <!-- refactor: componentize play controls overlay -->
 <!-- docs: add comments to continue playing state -->
+<!-- chore: review z-index for hover overlays -->
