@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Library, Plus, Search, ArrowRight, List } from 'lucide-react';
+import { Library, Plus, Search, ArrowRight, List, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
