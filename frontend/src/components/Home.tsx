@@ -674,6 +674,150 @@ export const Home = () => {
               </div>
             </div>
           </div>
+
+          {/* Large Cards Row 5 */}
+          <div className="flex gap-6 mt-8 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">For fans of Forrest Frank</span>
+              <div className="h-[280px] rounded-lg bg-gradient-to-br from-[#c8785e] to-[#2c1a14] p-5 relative overflow-hidden group cursor-pointer shadow-lg">
+                <div className="flex gap-4 relative z-10">
+                  <img src="https://picsum.photos/seed/forrestradio/100" className="w-20 h-20 shadow-xl rounded-md" alt="Forrest" />
+                  <div className="flex flex-col">
+                    <span className="text-white text-sm font-bold bg-black/20 w-fit px-2 py-0.5 rounded-sm mb-1">RADIO</span>
+                    <h3 className="text-white font-black text-2xl leading-tight">Forrest<br/>Frank Radio</h3>
+                    <span className="text-white/80 text-sm mt-1">Playlist • Spotify</span>
+                  </div>
+                </div>
+                <div className="absolute bottom-16 left-5 right-5 text-white/80 text-[13px] font-medium line-clamp-2 z-10">
+                  With Josiah Queen, LOST & FOUND, Jordan Feliz and more
+                </div>
+                <div className="flex items-center justify-between z-10 absolute bottom-4 left-5 right-5">
+                  <button className="bg-black/20 hover:bg-black/30 text-white font-bold text-[13px] px-4 py-1.5 rounded-full transition-colors flex items-center gap-2">
+                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM9.5 15.5v-7l6 3.5-6 3.5z"></path></svg>
+                     Preview
+                  </button>
+                  <div className="flex gap-4 items-center">
+                    <div className="flex gap-2 text-white/80 font-bold items-center">
+                        ••• <span className="border border-white/60 rounded-full w-5 h-5 flex items-center justify-center text-sm">+</span>
+                    </div>
+                    <button className="h-10 w-10 bg-white rounded-full flex items-center justify-center transition-all hover:scale-105 shadow-xl">
+                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">New episode from [0]</span>
+              <div className="h-[280px] rounded-lg bg-[#0f713c] p-5 relative overflow-hidden group cursor-pointer shadow-lg flex flex-col justify-between">
+                <div className="flex flex-col relative z-10">
+                  <h3 className="text-white font-black text-[22px] leading-tight line-clamp-2 mb-1">Nvidia's Big Test as AI Chip Race Heats Up</h3>
+                  <span className="text-white/80 text-sm font-medium">Episode • Bloomberg Tech</span>
+                </div>
+                <div className="flex justify-center my-2 relative z-10">
+                  <div className="relative">
+                    <img src="https://picsum.photos/seed/bloomberg/150" className="w-32 h-32 rounded-xl shadow-2xl" alt="Bloomberg" />
+                    <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black font-bold text-[13px] px-5 py-2.5 rounded-full whitespace-nowrap shadow-2xl hover:scale-105 transition-transform z-20">
+                      Continue playing
+                    </button>
+                  </div>
+                </div>
+                <div className="text-white/80 text-[13px] font-medium line-clamp-2 z-10 mt-auto">
+                  Aug 25 • 44 min 15 sec • Bloomberg's Ed Ludlow breaks down what to expect...
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">For fans of Josiah Queen</span>
+              <div className="h-[280px] rounded-lg bg-gradient-to-br from-[#cbb15b] to-[#2c2612] p-5 relative overflow-hidden group cursor-pointer shadow-lg">
+                <div className="flex gap-4 relative z-10">
+                  <img src="https://picsum.photos/seed/josiahradio/100" className="w-20 h-20 shadow-xl rounded-md" alt="Josiah" />
+                  <div className="flex flex-col">
+                    <span className="text-white text-sm font-bold bg-black/20 w-fit px-2 py-0.5 rounded-sm mb-1">RADIO</span>
+                    <h3 className="text-white font-black text-2xl leading-tight">Josiah<br/>Queen Radio</h3>
+                    <span className="text-white/80 text-sm mt-1">Playlist • Spotify</span>
+                  </div>
+                </div>
+                <div className="absolute bottom-5 left-5 right-5 text-white/80 text-sm font-medium line-clamp-2 z-10">
+                  With LOST & FOUND, ELEVATION RHYTHM, Colton Dixon and more
+                </div>
+                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612] z-20">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Large Cards Row 6 */}
+          <div className="flex gap-6 mt-8 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">More like Benson Boone</span>
+              <div className="h-[280px] rounded-lg bg-gradient-to-br from-[#1b5e20] to-[#0d2e10] p-5 relative overflow-hidden group cursor-pointer shadow-lg">
+                <div className="flex gap-4 relative z-10">
+                  <img src="https://picsum.photos/seed/benson/100" className="w-20 h-20 shadow-xl rounded-md" alt="Benson" />
+                  <div className="flex flex-col">
+                    <h3 className="text-white font-black text-2xl leading-tight mt-1">You'll Be<br/>Alright, Kid</h3>
+                    <span className="text-white/80 text-sm mt-1">Album • Alex Warren</span>
+                  </div>
+                </div>
+                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612] z-20">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                </button>
+              </div>
+            </div>
+            
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">Made for you</span>
+              <div className="h-[280px] rounded-lg bg-gradient-to-b from-[#2e7d32] to-[#121212] p-5 relative overflow-hidden group cursor-pointer shadow-lg">
+                <div className="flex gap-4 relative z-10">
+                  <img src="https://picsum.photos/seed/holdon/100" className="w-20 h-20 shadow-xl rounded-md" alt="Hold On" />
+                  <div className="flex flex-col">
+                    <span className="text-white text-sm font-bold bg-black/20 w-fit px-2 py-0.5 rounded-sm mb-1">RADIO</span>
+                    <h3 className="text-white font-black text-2xl leading-tight">Hold On Radio</h3>
+                    <span className="text-white/80 text-sm mt-1">Playlist • Spotify</span>
+                  </div>
+                </div>
+                <div className="absolute bottom-16 left-5 right-5 text-white/80 text-[13px] font-medium line-clamp-2 z-10">
+                  With Chord Overstreet, Jaymes Young, James Arthur and more
+                </div>
+                <div className="flex items-center justify-between z-10 absolute bottom-4 left-5 right-5">
+                  <button className="bg-black/40 hover:bg-black/60 text-white font-bold text-[13px] px-4 py-1.5 rounded-full transition-colors flex items-center gap-2">
+                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM9.5 15.5v-7l6 3.5-6 3.5z"></path></svg>
+                     Preview
+                  </button>
+                  <div className="flex gap-4 items-center">
+                    <div className="flex gap-2 text-white/80 font-bold items-center">
+                        ••• <span className="border border-white/60 rounded-full w-5 h-5 flex items-center justify-center text-sm">+</span>
+                    </div>
+                    <button className="h-10 w-10 bg-white rounded-full flex items-center justify-center transition-all hover:scale-105 shadow-xl">
+                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-none w-[360px] flex flex-col gap-3">
+              <span className="text-[13px] text-melody-text font-medium hover:underline cursor-pointer">Episodes you might like</span>
+              <div className="h-[280px] rounded-lg bg-[#911b0e] p-5 relative overflow-hidden group cursor-pointer shadow-lg flex flex-col justify-between">
+                <div className="flex flex-col relative z-10">
+                  <h3 className="text-white font-black text-[22px] leading-tight line-clamp-2 mb-1">The risks of investing $7tn in AI data centres</h3>
+                  <span className="text-white/80 text-sm font-medium">Episode • FT News Briefing</span>
+                </div>
+                <div className="flex justify-center my-2 relative z-10">
+                  <img src="https://picsum.photos/seed/ftnews/150" className="w-32 h-32 rounded-xl shadow-2xl" alt="FT News" />
+                </div>
+                <div className="text-white/80 text-[13px] font-medium line-clamp-2 z-10 mt-auto">
+                  Aug 26 • 11 min 53 sec • Traders and analysts are warning oil prices could soon hit $100 a barrel...
+                </div>
+                <button className="absolute right-5 bottom-5 translate-y-4 h-12 w-12 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 z-20">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
           
           <div className="h-10"></div>
           
