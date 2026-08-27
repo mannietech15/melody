@@ -211,3 +211,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- style: enhance contrast of radio badge text -->
 <!-- docs: clarify responsive behavior of large cards -->
 <!-- chore: remove legacy styles from home component -->
+<!-- style: adjust aspect ratios for station images -->
