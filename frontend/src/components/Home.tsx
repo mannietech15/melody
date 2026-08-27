@@ -21,14 +21,14 @@ export const Home = () => {
   };
 
   const topGridItems = [
-    { title: 'Liked Songs', image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=64&h=64&fit=crop', isLiked: true },
-    { title: 'Forrest Frank', image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=64&h=64&fit=crop' },
-    { title: 'Sad times', image: 'https://images.unsplash.com/photo-1493225457124-a1a2a5f5f92c?w=64&h=64&fit=crop' },
-    { title: 'Human Being Not Human Race', image: 'https://images.unsplash.com/photo-1516280440502-a1f945371a74?w=64&h=64&fit=crop' },
-    { title: 'Curtain Call: The Hits (Deluxe Edition)', image: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=64&h=64&fit=crop' },
-    { title: 'Mansion', image: 'https://images.unsplash.com/photo-1520699049698-acd2fce18738?w=64&h=64&fit=crop' },
-    { title: 'Meta Agrees to Change Its Ways, But...', image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=64&h=64&fit=crop', hasDot: true },
-    { title: 'Frozen - Let It Go', image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=64&h=64&fit=crop' },
+    { title: 'Liked Songs', image: 'https://picsum.photos/seed/liked/64', isLiked: true },
+    { title: 'Forrest Frank', image: 'https://picsum.photos/seed/forrest/64' },
+    { title: 'Sad times', image: 'https://picsum.photos/seed/sad/64' },
+    { title: 'Human Being Not Human Race', image: 'https://picsum.photos/seed/human/64' },
+    { title: 'Curtain Call: The Hits (Deluxe Edition)', image: 'https://picsum.photos/seed/curtain/64' },
+    { title: 'Mansion', image: 'https://picsum.photos/seed/mansion/64' },
+    { title: 'Meta Agrees to Change Its Ways, But...', image: 'https://picsum.photos/seed/meta/64', hasDot: true },
+    { title: 'Frozen - Let It Go', image: 'https://picsum.photos/seed/frozen/64' },
   ];
 
   return (
@@ -136,31 +136,28 @@ export const Home = () => {
                   </h2>
                   <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
                 </div>
-                <div className="flex gap-4">
-                  <div className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
-                    <div className="relative mb-4">
-                      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&h=200&fit=crop" alt="Damascus Road" className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                  {[
+                    { title: 'Damascus Road', subtitle: 'Josiah Queen', seed: 'damascus' },
+                    { title: 'Christmas in the City', subtitle: 'Pentatonix', seed: 'christmas' },
+                    { title: 'WILDCHILD', subtitle: 'Alex Warren', seed: 'wildchild' },
+                    { title: 'The Fall', subtitle: 'Bryce Vine', seed: 'fall' },
+                    { title: 'New Heights', subtitle: 'Jason Derulo', seed: 'heights' },
+                    { title: 'Lost Boy', subtitle: 'Ruth B.', seed: 'lost' },
+                    { title: 'Home', subtitle: 'Michael Bublé', seed: 'home' },
+                    { title: 'Yellow', subtitle: 'Coldplay', seed: 'yellow' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
+                      <div className="relative mb-4">
+                        <img src={`https://picsum.photos/seed/${item.seed}/200`} alt={item.title} className="w-full aspect-square object-cover rounded-md shadow-lg" />
+                        <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
+                          <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
+                        </button>
+                      </div>
+                      <h3 className="font-bold text-white mb-1 truncate text-[15px]">{item.title}</h3>
+                      <p className="text-sm text-melody-text truncate">{item.subtitle}</p>
                     </div>
-                    <h3 className="font-bold text-white mb-1 truncate text-[15px]">Damascus Road</h3>
-                    <p className="text-sm text-melody-text truncate">Josiah Queen</p>
-                  </div>
-                  <div className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
-                    <div className="relative mb-4">
-                      <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5f5f92c?w=200&h=200&fit=crop" alt="Christmas in the City" className="w-full aspect-square object-cover rounded-md shadow-lg" />
-                    </div>
-                    <h3 className="font-bold text-white mb-1 truncate text-[15px]">Christmas in the City</h3>
-                    <p className="text-sm text-melody-text truncate">Pentatonix</p>
-                  </div>
-                  <div className="flex-none w-[160px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group">
-                    <div className="relative mb-4">
-                      <img src="https://images.unsplash.com/photo-1516280440502-a1f945371a74?w=200&h=200&fit=crop" alt="WILDCHILD" className="w-full aspect-square object-cover rounded-md shadow-lg" />
-                      <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
-                        <svg viewBox="0 0 24 24" className="w-6 h-6 fill-black ml-1"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
-                      </button>
-                    </div>
-                    <h3 className="font-bold text-white mb-1 truncate text-[15px]">WILDCHILD</h3>
-                    <p className="text-sm text-melody-text truncate">Alex Warren</p>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -175,11 +172,11 @@ export const Home = () => {
               <span className="text-sm font-bold text-melody-text hover:underline cursor-pointer">Show all</span>
             </div>
             <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {['Bloomberg Tech', 'Dolby ATMOS', 'FT News', '5', 'The Mindset', 'The Pragmatic Engineer', 'Tech News Briefing'].map((item, i) => (
+              {['Bloomberg Tech', 'Dolby ATMOS', 'FT News', '5', 'The Mindset', 'The Pragmatic Engineer', 'Tech News Briefing', 'Planet Money'].map((item, i) => (
                 <div key={i} className="flex-none w-[180px] bg-[#181818] p-4 rounded-lg hover:bg-[#282828] transition-all cursor-pointer group relative">
                   <div className="relative mb-4">
                     <img 
-                      src={`https://images.unsplash.com/photo-${1500000000000 + i}?w=200&h=200&fit=crop`} 
+                      src={`https://picsum.photos/seed/podcast${i}/200`} 
                       alt="Cover" 
                       className="w-full aspect-square object-cover rounded-xl shadow-lg"
                     />
