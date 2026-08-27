@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between gap-8 pb-20">
         <div className="flex gap-16 flex-wrap">
           <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-white">Company</h4>
+            <h4 className="font-bold text-white">Company <!-- section --></h4>
             <a href="#" className="text-melody-text hover:text-white hover:underline">About</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">Jobs</a>
             <a href="#" className="text-melody-text hover:text-white hover:underline">For the Record</a>
