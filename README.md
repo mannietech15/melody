@@ -280,3 +280,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- fix: ensure continue button overrides hover effects -->
 <!-- refactor: abstract button styles for large cards -->
 <!-- chore: test play controls on different screen sizes -->
+<!-- style: fine-tune gap between preview icons -->
