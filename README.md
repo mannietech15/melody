@@ -196,3 +196,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: finalize layout tweaks for beta release -->
 <!-- style: adjust margins in new home sections -->
 <!-- refactor: componentize large card layouts -->
+<!-- docs: document mock data for new sections -->
