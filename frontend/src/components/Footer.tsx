@@ -3,7 +3,7 @@ import { Instagram, Twitter, Facebook } from 'lucide-react';
 export const Footer = () => {
   return (
     <>
-      <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between gap-8 pb-20">
+      <div className="mt-12 pt-10 flex flex-col md:flex-row justify-between gap-8 pb-20">
         <div className="flex gap-16 flex-wrap">
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-white">Company <!-- section --></h4>
