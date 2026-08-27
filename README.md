@@ -181,3 +181,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: remove legacy mock data -->
 <!-- style: enhance contrast on pre-save text -->
 <!-- refactor: modularize episode list rendering -->
+<!-- chore: validate image seed generation -->
