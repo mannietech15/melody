@@ -189,3 +189,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: consolidate flexbox classes -->
 <!-- chore: prep for upcoming feature toggle -->
 <!-- style: smooth transition timings on hover -->
+<!-- docs: document new gradient background -->
