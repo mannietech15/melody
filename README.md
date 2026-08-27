@@ -277,3 +277,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- docs: add comments to continue playing state -->
 <!-- chore: review z-index for hover overlays -->
 <!-- style: tweak preview button opacity on radio card -->
+<!-- fix: ensure continue button overrides hover effects -->
