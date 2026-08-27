@@ -202,3 +202,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- fix: ensure scrollbar remains hidden on new rows -->
 <!-- refactor: abstract common card styling -->
 <!-- chore: validate image seed generation for podcasts -->
+<!-- style: adjust line-clamp for long playlist titles -->
