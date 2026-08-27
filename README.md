@@ -243,3 +243,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: test seeded image reliability for new rows -->
 <!-- style: fine-tune play button hover effects -->
 <!-- docs: update documentation for Lifer custom card UI -->
+<!-- chore: review flex alignments in grid elements -->
