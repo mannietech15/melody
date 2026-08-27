@@ -60,6 +60,18 @@ export const Login = () => {
             />
           </div>
 
+          <div className="flex flex-col gap-2 mb-2">
+            <label className="text-white text-sm font-bold">Password</label>
+            <input 
+              type="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="bg-[#121212] border border-[#878787] hover:border-white focus:border-white focus:outline-none focus:ring-2 focus:ring-white rounded-[4px] p-3 text-white transition-all"
+              placeholder=""
+              required
+            />
+          </div>
+
           <button 
             type="submit" 
             disabled={loading}
