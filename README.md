@@ -221,3 +221,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: clean up unused variables -->
 <!-- chore: validate responsive breakpoints -->
 <!-- style: adjust padding in playlist section -->
+<!-- docs: document shadow utilities -->
