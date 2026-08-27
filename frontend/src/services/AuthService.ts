@@ -2,12 +2,14 @@ export interface User {
   id: string;
   name: string;
   email: string;
+  token?: string;
 }
 
 class AuthService {
   private static instance: AuthService;
   private currentUser: User | null = null;
   private listeners: ((user: User | null) => void)[] = [];
+  private baseUrl = 'http://localhost:8080/api';
 
   private constructor() {
     const storedUser = localStorage.getItem('melody_user');
@@ -38,44 +40,71 @@ class AuthService {
     this.listeners.forEach(listener => listener(this.currentUser));
   }
 
-  public async login(email: string, password: string):Promise<User> {
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 800));
-    
-    if (email && password) {
-      const user = {
-        id: Math.random().toString(36).substr(2, 9),
-        name: email.split('@')[0],
-        email
+  public async login(email: string, password: string): Promise<User> {
+    try {
+      const response = await fetch(`${this.baseUrl}/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (!response.ok) {
+        const errorMsg = await response.text();
+        throw new Error(errorMsg || 'Login failed');
+      }
+
+      const data = await response.json();
+      
+      const user: User = {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        token: data.token,
       };
+
       this.currentUser = user;
       localStorage.setItem('melody_user', JSON.stringify(user));
       this.notify();
       return user;
+    } catch (error) {
+      console.error('Login error:', error);
+      throw error;
     }
-    throw new Error('Invalid credentials');
   }
 
-  public async register(email: string, password: string, name: string):Promise<User> {
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 800));
+  public async register(email: string, password: string, name: string): Promise<User> {
+    try {
+      const response = await fetch(`${this.baseUrl}/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, name })
+      });
 
-    if (email && password && name) {
-      const user = {
-        id: Math.random().toString(36).substr(2, 9),
-        name,
-        email
+      if (!response.ok) {
+        const errorMsg = await response.text();
+        throw new Error(errorMsg || 'Registration failed');
+      }
+
+      const data = await response.json();
+      
+      const user: User = {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        token: data.token,
       };
+
       this.currentUser = user;
       localStorage.setItem('melody_user', JSON.stringify(user));
       this.notify();
       return user;
+    } catch (error) {
+      console.error('Registration error:', error);
+      throw error;
     }
-    throw new Error('Registration failed');
   }
 
   public async logout(): Promise<void> {
-    await new Promise(resolve => setTimeout(resolve, 300));
     this.currentUser = null;
     localStorage.removeItem('melody_user');
     this.notify();
@@ -83,6 +112,10 @@ class AuthService {
 
   public getCurrentUser(): User | null {
     return this.currentUser;
+  }
+
+  public getToken(): string | null {
+    return this.currentUser?.token || null;
   }
 }
 

@@ -17,8 +17,8 @@ export const Login = () => {
     try {
       await AuthService.login(email, password);
       navigate('/');
-    } catch (err) {
-      setError('Invalid email or password.');
+    } catch (err: any) {
+      setError(err.message || 'Invalid email or password.');
     } finally {
       setLoading(false);
     }
