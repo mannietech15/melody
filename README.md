@@ -193,3 +193,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: audit console warnings -->
 <!-- style: optimize scrollbar hiding css -->
 <!-- refactor: abstract hardcoded strings -->
+<!-- chore: finalize layout tweaks for beta release -->
