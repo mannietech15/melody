@@ -249,3 +249,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: validate image aspect ratios across cards -->
 <!-- style: adjust border radius on square playlists -->
 <!-- docs: clarify responsive stacking behavior -->
+<!-- chore: remove legacy styles from large cards -->
