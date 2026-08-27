@@ -198,3 +198,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: componentize large card layouts -->
 <!-- docs: document mock data for new sections -->
 <!-- chore: optimize station gradient overlays -->
+<!-- style: fine-tune radio badge positioning -->
