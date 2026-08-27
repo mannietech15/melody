@@ -173,3 +173,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- docs: update image source documentation -->
 <!-- chore: prepare assets for production build -->
 <!-- style: adjust padding in sidebar components -->
+<!-- fix: ensure consistent image aspect ratios -->
