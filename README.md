@@ -293,3 +293,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- refactor: consolidate shadow variables for buttons -->
 <!-- chore: audit console warnings for SVG icons -->
 <!-- style: smooth transitions in newly added controls -->
+<!-- docs: document absolute positioning of control bar -->
