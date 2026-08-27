@@ -251,3 +251,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- docs: clarify responsive stacking behavior -->
 <!-- chore: remove legacy styles from large cards -->
 <!-- style: tweak typography in custom 5 Minute AI card -->
+<!-- refactor: consolidate shadow variables -->
