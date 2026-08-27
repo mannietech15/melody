@@ -23,7 +23,7 @@ export const Section: React.FC<SectionProps> = ({ title, isCircular = false }) =
               <img 
                 src={`https://picsum.photos/seed/${title.replace(/\s+/g, '')}${item}/200/200`} 
                 alt="Cover" 
-                className={`w-full aspect-square object-cover shadow-[0_8px_24px_rgba(0,0,0,0.5)] ${isCircular ? 'rounded-full' : 'rounded-md'}`}
+                className={`w-full aspect-square object-cover shadow-lg ${isCircular ? 'rounded-full' : 'rounded-md'}`}
               />
               <button className="absolute right-2 bottom-2 translate-y-2 h-12 w-12 bg-melody-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all shadow-xl hover:scale-105 hover:bg-[#f40612]">
                 <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24" fill="black">
