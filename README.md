@@ -267,3 +267,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: optimize SVG icon sizes -->
 <!-- style: adjust typography weights in section headers -->
 <!-- docs: clarify z-index layering for custom layouts -->
+<!-- chore: finalize structural layout for beta preview -->
