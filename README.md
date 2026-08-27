@@ -291,3 +291,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 <!-- chore: remove legacy play buttons from podcast cards -->
 <!-- style: tweak typography in custom 5 Minute AI card -->
 <!-- refactor: consolidate shadow variables for buttons -->
+<!-- chore: audit console warnings for SVG icons -->
